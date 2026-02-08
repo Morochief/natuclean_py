@@ -1,0 +1,157 @@
+---
+// IngredientsSection.astro - Alquimia Interactive Section
+---
+
+<section class="ingredients">
+  <div class="container">
+    <div class="ingredients__header">
+      <span class="ingredients__label">Transparencia Total</span>
+      <h2 class="ingredients__title">Nuestra Alquimia</h2>
+      <p class="ingredients__description">
+        Cada ingrediente es seleccionado cuidadosamente por sus propiedades aromáticas y beneficios naturales
+      </p>
+    </div>
+    
+    <div class="ingredients__grid">
+      <!-- Ingredient 1 -->
+      <div class="ingredient-card">
+        <div class="ingredient-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 8c-6 10-10 16-10 22s4 8 10 8 10-2 10-8c0-6-4-12-10-22z" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="ingredient-card__name">Cera de Soja</h3>
+        <p class="ingredient-card__category">Base Natural</p>
+        <p class="ingredient-card__description">
+          Quemado limpio, sin tóxicos. Produzco mayor cantidad de fragancia y arde más tiempo que la cera de parafina.
+        </p>
+        <div class="ingredient-card__benefits">
+          <span class="ingredient-card__benefit">✓ Biodegradable</span>
+          <span class="ingredient-card__benefit">✓ Vegana</span>
+n        </div>
+      </div>
+      
+      <!-- Ingredient 2 -->
+      <div class="ingredient-card">
+        <div class="ingredient-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 32c0-8 8-12 16-12s16 4 16 12" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="ingredient-card__name">Aceites Esenciales</h3>
+        <p class="ingredient-card__category">Fragancia</p>
+        <p class="ingredient-card__description">
+          100% puros y naturales. Sin fragancias sintéticas ni ftalatos. Aromaterapia genuina.
+        </p>
+        <div class="ingredient-card__benefits">
+          <span class="ingredient-card__benefit">✓ Sin Parabenos</span>
+          <span class="ingredient-card__benefit">✓ Testeado</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 3 -->
+      <div class="ingredient-card">
+        <div class="ingredient-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
+            <rect x="18" y="14" width="12" height="20" rx="2" stroke="currentColor" stroke-width="2"/>
+            <line x1="21" y1="18" x2="27" y2="18" stroke="currentColor" stroke-width="2"/>
+            <line x1="21" y1="22" x2="27" y2="22" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="ingredient-card__name">Mecha de Algodón</h3>
+        <p class="ingredient-card__category">Combustión</p>
+        <p class="ingredient-card__description">
+          100% algodón orgánico sin plomo. Quemado uniforme desde el primer momento hasta el último.
+        </p>
+        <div class="ingredient-card__benefits">
+          <span class="ingredient-card__benefit">✓ Sin Plomo</span>
+          <span class="ingredient-card__benefit">✓ Orgánica</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 4 -->
+      <div class="ingredient-card">
+        <div class="ingredient-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 12l-4 8h8l-4 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <circle cx="24" cy="28" r="4" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="ingredient-card__name">Extractos Botánicos</h3>
+        <p class="ingredient-card__category">Complemento</p>
+        <p class="ingredient-card__description">
+          Extractos naturales de hierbas y flores. Adds depth y complejidad a cada fragancia.
+        </p>
+        <div class="ingredient-card__benefits">
+          <span class="ingredient-card__benefit">✓ Sostenible</span>
+          <span class="ingredient-card__benefit">✓ Artesanal</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 5 -->
+      <div class="ingredient-card">
+        <div class="ingredient-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
+            <path d="M24 14c-8 0-12 8-12 14s4 10 12 10 12-4 12-10c0-6-4-14-12-14z" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="28" r="4" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="ingredient-card__name">Vainilla Natural</h3>
+        <p class="ingredient-card__category">Esencia</p>
+        <p class="ingredient-card__description">
+          Vainilla Bourbon de Madagascar. Aroma cálido y reconfortante sin artificial.
+        </p>
+        <div class="ingredient-card__benefits">
+          <span class="ingredient-card__benefit">✓ Fair Trade</span>
+          <span class="ingredient-card__benefit">✓ Orgánico</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 6 -->
+      <div class="ingredient-card">
+        <div class="ingredient-card__icon">
+          <svg viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="22" fill="currentColor" fill-opacity="0.1" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 20c0-4 4-8 8-8s8 4 8 8" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 28c0-4 4-4 8-4s8 0 8 4" stroke="currentColor" stroke-width="2"/>
+            <path d="M16 36c0-4 4-4 8-4s8 0 8 4" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <h3 class="ingredient-card__name">Cítricos Frescos</h3>
+        <p class="ingredient-card__category">Nota de Salida</p>
+        <p class="ingredient-card__description">
+          Aceites de naranja, limón y pomelo. Energia positiva y frescura natural.
+        </p>
+        <div class="ingredient-card__benefits">
+          <span class="ingredient-card__benefit">✓ Antibacterial</span>
+          <span class="ingredient-card__benefit">✓ Energizante</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="ingredients__commitment">
+      <div class="ingredients__commitment-icon">🌿</div>
+      <div class="ingredients__commitment-text">
+        <strong>Nuestro Compromiso</strong>
+        <p>Zero residuos. Empaques reciclables y biodegradables. Cada vela es una obra de arte sostenible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ingredients {
+    padding: var(--space-xl) 0;
+    background: var(--color-bg-alt);
+  }
+  
+  .ingredients__header {
+    text-align: center;
+    max-width: 600px;
+n    margin: 0 auto var(--space-xl);\n  }\n  \n  .ingredients__label {\n    display: inline-block;\n    font-family: var(--font-body);\n    font-size: 0.75rem;\n    font-weight: 600;\n    letter-spacing: 0.15em;\n    text-transform: uppercase;\n    color: var(--color-primary);\n    margin-bottom: var(--space-sm);\n    padding: 0.5rem 1rem;\n    background: rgba(25, 230, 60, 0.1);\n    border-radius: var(--radius-full);\n  }\n  \n  .ingredients__title {\n    font-size: clamp(2rem, 4vw, 3rem);\n    margin-bottom: var(--space-sm);\n  }\n  \n  .ingredients__description {\n    font-size: 1.1rem;\n    color: var(--color-text-light);\n  }\n  \n  .ingredients__grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: var(--space-md);\n    margin-bottom: var(--space-xl);\n  }\n  \n  .ingredient-card {\n    background: var(--color-white);\n    padding: var(--space-lg);\n    border-radius: var(--radius-lg);\n    text-align: center;\n    transition: all var(--transition-base);\n    box-shadow: var(--shadow-sm);\n  }\n  \n  .ingredient-card:hover {\n    transform: translateY(-8px);\n    box-shadow: var(--shadow-lg);\n  }\n  \n  .ingredient-card__icon {\n    width: 64px;\n    height: 64px;\n    margin: 0 auto var(--space-md);\n    color: var(--color-primary);\n  }\n  \n  .ingredient-card__icon svg {\n    width: 100%;\n    height: 100%;\n  }\n  \n  .ingredient-card__name {\n    font-family: var(--font-display);\n    font-size: 1.25rem;\n    font-weight: 600;\n    margin-bottom: var(--space-xs);\n  }\n  \n  .ingredient-card__category {\n    font-size: 0.75rem;\n    font-weight: 600;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--color-accent);\n    margin-bottom: var(--space-sm);\n  }\n  \n  .ingredient-card__description {\n    font-size: 0.9rem;\n    color: var(--color-text-light);\n    line-height: 1.6;\n    margin-bottom: var(--space-md);\n  }\n  \n  .ingredient-card__benefits {\n    display: flex;\n    justify-content: center;\n    gap: var(--space-sm);\n    flex-wrap: wrap;\n  }\n  \n  .ingredient-card__benefit {\n    font-size: 0.75rem;\n    font-weight: 500;\n    color: var(--color-primary);\n    padding: 0.25rem 0.5rem;\n    background: rgba(25, 230, 60, 0.1);\n    border-radius: var(--radius-sm);\n  }\n  \n  .ingredients__commitment {\n    display: flex;\n    align-items: center;\n    gap: var(--space-md);\n    padding: var(--space-lg);\n    background: var(--color-white);\n    border-radius: var(--radius-lg);\n    box-shadow: var(--shadow-md);\n  }\n  \n  .ingredients__commitment-icon {\n    font-size: 3rem;\n  }\n  \n  .ingredients__commitment-text strong {\n    display: block;\n    font-family: var(--font-display);\n    font-size: 1.25rem;\n    margin-bottom: var(--space-xs);\n  }\n  \n  .ingredients__commitment-text p {\n    color: var(--color-text-light);\n    margin: 0;\n  }\n  \n  @media (max-width: 968px) {\n    .ingredients__grid {\n      grid-template-columns: repeat(2, 1fr);\n    }\n    \n    .ingredients__commitment {\n      flex-direction: column;\n      text-align: center;\n    }\n  }\n  \n  @media (max-width: 480px) {\n    .ingredients__grid {\n      grid-template-columns: 1fr;\n    }\n  }\n</style>\n

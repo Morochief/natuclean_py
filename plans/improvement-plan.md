@@ -19,7 +19,7 @@
 
 ---
 
-## 🎯 Plan de Mejora por Fases
+## 🎯 Plan de Mejora por Fases (Actualizado)
 
 ### Fase 1: Hero Section - Impacto Visual
 **Objetivo:** Crear primera impresión impactante
@@ -28,7 +28,7 @@
 - [ ] Añadir headline con tipografía dramática (Playfair Display)
 - [ ] Implementar subtítulo con valor diferencial
 - [ ] Botón CTA con hover lift effect
-- [ ] Fondo con gradiente sutil o imagen optimizada
+- [ ] **Arched frames** para las imágenes de producto (look editorial)
 - [ ] Animación de entrada suave (fade-in + scale)
 
 ### Fase 2: Catálogo de Productos - Grid Elegante
@@ -37,12 +37,50 @@
 - [ ] Crear componente ProductCard reutilizable
 - [ ] Implementar grid responsivo (CSS Grid)
 - [ ] Efecto glassmorphism en cards (backdrop-filter)
+- [ ] **Arched image frames** en productos destacados
 - [ ] Hover effect: imagen escala + sombra suave
 - [ ] Etiquetas de precio elegantes
 - [ ] Etiquetas de "Nuevo" o "Popular" si aplica
 - [ ] Categorías filtrables (Velas, Kits, Accesorios)
 
-### Fase 3: Sección "Nuestra Historia" - Artesanía
+### Fase 3: Product Detail Page - Scent Triangle
+**Objetivo:** Página de producto interactiva
+
+- [ ] Crear `src/pages/product/[id].astro`
+- [ ] **Visualización Scent Triangle:**
+  - Notas de Salida (Top notes)
+  - Notas de Corazón (Middle notes)
+  - Notas de Fondo (Base notes)
+- [ ] Diseño split-screen (imagen izquierda, detalles derecha)
+- [ ] Solid.js para contador y botón Add to Cart
+- [ ] Descripción premium del producto
+
+### Fase 4: "Ritual de Cuidado" - Sección Premium
+**Objetivo:** Crear experiencia sensorial completa
+
+- [ ] Diseño con iconografía premium (SVG icons elegantes)
+- [ ] Pasos para disfrutar la vela:
+  1. Preparar el espacio
+  2. Encender con intención
+  3. Dejar arder
+  4. Extinguir con cuidado
+- [ ] Imágenes ilustrativas o iconos editoriales
+- [ ] Tipografía distinguida para cada paso
+- [ ] Micro-animaciones en cada paso
+
+### Fase 5: "Club Natuclean" - Suscripción Exclusiva
+**Objetivo:** Crear comunidad de clientes fieles
+
+- [ ] Diseño de newsletter con estética exclusiva
+- [ ] Beneficios claros:
+  - Acceso anticipado a nuevos productos
+  - Descuentos exclusivos
+  - Recipes/Secretos de aromaterapia
+- [ ] Formulario minimalista y elegante
+- [ ] Integración con Hono backend
+- [ ] Tiers de suscripción (Mensual/Trimestral/Anual)
+
+### Fase 6: "Nuestra Historia" - Artesanía
 **Objetivo:** Contar la historia de la marca
 
 - [ ] Layout asimétrico (imagen + texto alternado)
@@ -51,24 +89,16 @@
 - [ ] Estadísticas: "X años", "X productos creados", etc.
 - [ ] Valores de marca: Natural, Sostenible, Artesanal
 
-### Fase 4: Sección de Ingredientes - "Alquimia"
+### Fase 7: Sección de Ingredientes - "Alquimia"
 **Objetivo:** Educar sobre los ingredients
 
-- [ ] Diseño visual de notas olfativas (antes mencionados)
+- [ ] Diseño visual de notas olfativas
 - [ ] Iconos para cada ingrediente natural
 - [ ] Descripciones de beneficios
 - [ ] Animación al hacer scroll
+- [ ] Grid de ingredientes con hover effects
 
-### Fase 5: Newsletter y Contacto
-**Objetivo:** Capturar leads
-
-- [ ] Diseño minimalista del formulario
-- [ ] Beneficio claro: "Recibe ofertas exclusivas"
-- [ ] Integración con Hono backend (ya planificado)
-- [ ] Validación en tiempo real con Solid.js
-- [ ] Mensajes de éxito/error atractivos
-
-### Fase 6: Navegación y Footer
+### Fase 8: Navegación y Footer
 **Objetivo:** Mejorar UX global
 
 - [ ] Header fijo con blur effect
@@ -105,60 +135,59 @@ Las siguientes imágenes están disponibles en `/public/reference_assets/`:
 1. `Hero.astro` - Sección principal
 2. `ProductGrid.astro` - Grid de productos
 3. `ProductCard.tsx` - Card individual (Solid.js)
-4. `AboutSection.astro` - Historia de marca
-5. `Ingredients.astro` - Sección de ingredientes
-6. `Newsletter.astro` - Formulario de suscripción
-7. `Header.astro` - Navegación
-8. `Footer.astro` - Footer completo
+4. `ScentTriangle.tsx` - Visualización de notas (Solid.js)
+5. `AboutSection.astro` - Historia de marca
+6. `RitualSection.astro` - Ritual de cuidado premium
+7. `ClubNewsletter.astro` - Club Natuclean
+8. `Ingredients.astro` - Sección de ingredientes
+9. `Header.astro` - Navegación
+10. `Footer.astro` - Footer completo
 
 ### Animaciones y Efectos
 - `animate-fade-in` - Entrada suave
 - `animate-scale` - Escala en hover
 - `glass-effect` - Glassmorphism
+- `arched-frame` - Marcos arqueados editoriales
 - Smooth scroll para secciones
 - Parallax sutil en imágenes
 
 ---
 
-## 📋 Checklist de Implementación
+## 📋 Roadmap Actualizado (Según SITE.md)
 
-### Prioridad Alta
-- [ ] Rediseñar Hero Section
-- [ ] Crear ProductCard component
-- [ ] Implementar Product Grid
-- [ ] Completar About Section
+### Completado
+- [x] Iteration 1: Hero Section refinada
 
-### Prioridad Media
-- [ ] Newsletter integration
-- [ ] Mobile navigation
-- [ ] Ingredients visualization
-- [ ] Footer completo
+### En Progreso
+- [ ] Iteration 2 (Elite): Product Detail con Scent Triangle
+- [ ] Iteration 3 (Elite): Ritual de Cuidado
+- [ ] Iteration 4 (Elite): Club Natuclean
 
-### Prioridad Baja
-- [ ] Scent Profiler quiz
-- [ ] 3D Candle viewer
-- [ ] Product Detail pages dinámicas
+### Futuro
+- [ ] Iteration 5: Alquimia (ingredientes)
+- [ ] Iteration 6: Contact form completo
 
 ---
 
 ## 🎨 Elementos de Diseño a Adoptar de la Referencia
 
 1. **Espaciado generoso** - Whitespace como elemento de diseño
-2. **Imágenes redondeadas** - Bordes suaves (1rem radius)
+2. **Imágenes redondeadas/arqueadas** - Bordes suaves o arqueados (Arched frames)
 3. **Micro-interacciones** - Hover states sutiles
 4. **Tipografía jerárquica** - Playfair para headers, Inter para body
 5. **Colores consistentes** - Mantener paleta actual
 6. **Mobile-first** - Diseñar para móvil primero
+7. **Iconografía premium** - Para Ritual de Cuidado
+8. **Visualizaciones triangulares** - Para notas olfativas
 
 ---
 
-## 📅 Próximos Pasos
+## 📅 Próximos Pasos Inmediatos
 
-1. **Revisar y aprobar este plan**
-2. **Seleccionar fotos principales** del /fotos/ folder
-3. **Crear componentes base** (Header, Footer, Hero)
-4. **Iterar y mejorar** según feedback
+1. **Fase 1: Hero Section** - Rediseño completo
+2. **Componente ProductCard** - Base para catálogo
+3. **Scent Triangle** - Para Iteration 2
 
 ---
 
-*Plan creado el 2026-02-08 basado en análisis de www.homecraftedcandleco.com*
+*Plan actualizado el 2026-02-08 incorporando las nuevas ideas del SITE.md*

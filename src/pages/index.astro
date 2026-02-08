@@ -1,190 +1,338 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import ProductCard from '../components/ProductCard';
+import ProductCard from '../components/ProductCard.tsx';
+import RitualSection from '../components/RitualSection.astro';
+import IngredientsSection from '../components/IngredientsSection.astro';
+import ClubNewsletter from '../components/ClubNewsletter.tsx';
 
 const products = [
-  { id: '1', name: 'Vela Esencial', price: 'Gs. 95.000', image: '/images/hero-candle.jpg', tag: 'Destacado' },
-  { id: '2', name: 'Jabón Botánico', price: 'Gs. 45.000', image: '/images/soap-botanic.jpg' },
-  { id: '3', name: 'Vela Coco & Vainilla', price: 'Gs. 90.000', image: '/images/candle-detail.jpg' },
-  { id: '4', name: 'Duo Armonía', price: 'Gs. 180.000', image: '/images/collection-set.jpg', tag: 'Oferta' }
+  {
+    id: 'vela-bosque',
+    name: 'Bosque de Niebla',
+    description: 'Una mezcla mística de musgo de roble y bayas silvestres.',
+    price: 35.00,
+    image: '/images/hero-candle.jpg',
+    scentNotes: {
+      top: ['Pino', 'Eucalipto'],
+      heart: ['Musgo', 'Salvia'],
+      base: ['Ámbar', 'Cedro']
+    },
+    isNew: true
+  },
+  {
+    id: 'vela-lavanda',
+    name: 'Lavanda & Vainilla',
+    description: 'Calma pura para tus momentos de relax y meditación.',
+    price: 32.00,
+    image: '/images/soap-botanic.jpg',
+    scentNotes: {
+      top: ['Bergamota', 'Lavanda'],
+      heart: ['Miel', 'Jasmín'],
+      base: ['Vainilla Bourbon', 'Musk']
+    },
+    isPopular: true
+  },
+  {
+    id: 'vela-citrica',
+    name: 'Amanecer Cítrico',
+    description: 'Energía radiante con notas vibrantes de pomelo y verbena.',
+    price: 30.00,
+    image: '/images/hero-candle.jpg',
+    scentNotes: {
+      top: ['Pomelo', 'Limón'],
+      heart: ['Verbena', 'Té Verde'],
+      base: ['Vetro', 'Agujas de Pino']
+    }
+  }
 ];
 ---
 
-<Layout title="Natuclean_py - Lujo Sostenible">
-	<main>
-		<Hero />
-		
-		<section id="alquimia" class="alquimia-section container">
-			<div class="section-header">
-				<h2>Alquimia Vegetal</h2>
-				<p>La pureza es nuestra promesa. Solo ceras vegetales, sin parafinas.</p>
-			</div>
-			
-			<div class="grid-benefits">
-				<div class="benefit-card">
-					<h3>Cera de Soja</h3>
-					<p>Combustión limpia y duradera que respeta tu aire. Biodegradable y renovable.</p>
-				</div>
-				<div class="benefit-card">
-					<h3>Cera de Palma</h3>
-					<p>Textura única y cristalización natural ("efecto pluma"). De origen ético certificado.</p>
-				</div>
-				<div class="benefit-card">
-					<h3>Cera de Coco</h3>
-					<p>Suavidad cremosa y excelente difusión de aromas botánicos. Hidratación superior.</p>
-				</div>
-			</div>
-		</section>
-
-		<section id="coleccion" class="coleccion-section container">
-			<div class="section-header">
-				<h2>Favoritos de Temporada</h2>
-				<p>Explora nuestras creaciones más queridas.</p>
-			</div>
-			
-			<div class="product-grid">
-				{products.map(p => (
-					<ProductCard client:load {...p} />
-				))}
-			</div>
-		</section>
-
-		<section id="historia" class="historia-section">
-      <div class="container grid-2">
-        <div class="image-box">
-          <img src="https://images.unsplash.com/photo-1572726710706-7e95df9f3ee2?auto=format&fit=crop&q=80&w=1000" alt="Artesanía" />
+<Layout title="Natuclean_py - Velas Artesanales de Lujo">
+  <Header />
+  <main>
+    <Hero />
+    
+    <!-- Colección de Productos -->
+    <section id="productos" class="section products-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Atemporal</span>
+          <h2 class="section-title">Nuestra Colección</h2>
+          <p class="section-description">
+            Cada vela está creada a mano con amor y los mejores ingredientes naturales.
+          </p>
         </div>
-        <div class="content-box">
-          <h2>El Latido de Natuclean</h2>
-          <p>Nuestra historia comienza con las manos de artesanos paraguayos. Cada vela es vertida individualmente, respetando los tiempos de la naturaleza.</p>
-          <p>No creamos solo productos, creamos rituales de bienestar que honran la tierra.</p>
+        <div class="products-grid">
+          {products.map(product => (
+            <ProductCard client:visible {...product} />
+          ))}
         </div>
       </div>
     </section>
-	</main>
+    
+    <!-- Historia / Esencia con Diseño Editorial -->
+    <section id="historia" class="section about-section">
+      <div class="container">
+        <div class="about__grid">
+          <div class="about__image-container">
+            <div class="image-frame-arched animate-fade-in">
+              <img src="/images/hero-candle.jpg" alt="Proceso Artesanal" class="about__image" />
+            </div>
+          </div>
+          <div class="about__content">
+            <span class="section-label">Nuestra Esencia</span>
+            <h2 class="section-title">Artesanía con Propósito</h2>
+            <p class="section-text">
+              En Natuclean_py, creemos que el bienestar comienza con lo que dejamos entrar en nuestro hogar. Nuestras velas no son solo objetos de decoración; son portales a momentos de paz y conexión con la naturaleza.
+            </p>
+            <p class="section-text">
+              Utilizamos cera de soja 100% natural, pabilos de algodón de alta calidad y aceites esenciales puros para garantizar un quemado limpio y una fragancia que perdura.
+            </p>
+            <div class="about__stats">
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Natural</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">Hand</span>
+                <span class="stat-label">Poured</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">Eco</span>
+                <span class="stat-label">Friendly</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Ritual Section -->
+    <RitualSection />
+    
+    <!-- Alquimia / Ingredientes -->
+    <IngredientsSection />
+    
+    <!-- Club Natuclean -->
+    <ClubNewsletter client:visible />
+  </main>
   
-  <footer>
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <h2>Natuclean_py</h2>
-        <p>Lujo sostenible hecho en Paraguay.</p>
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <span class="footer__logo">Natuclean_py</span>
+          <p class="footer__tagline">Velas artesanales 100% naturales. Hechas a mano en Paraguay.</p>
+        </div>
+        <div class="footer__links">
+          <a href="#productos">Colección</a>
+          <a href="#historia">Historia</a>
+          <a href="#ritual">Ritual</a>
+          <a href="#ingredientes">Alquimia</a>
+          <a href="#club">Club</a>
+        </div>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="WhatsApp">WA</a>
+        </div>
+        <p class="footer__copy">© 2024 Natuclean_py. Elevando tus sentidos de forma natural.</p>
       </div>
-      <div class="footer-links">
-        <h4>Explorar</h4>
-        <a href="#">Velas de Soja</a>
-        <a href="#">Jabones Artesanales</a>
-        <a href="#">Kits de Regalo</a>
-      </div>
-      <div class="footer-links">
-        <h4>Info</h4>
-        <a href="#">Envíos</a>
-        <a href="#">Cuidados</a>
-        <a href="#">Contacto</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Natuclean_py. Todos los derechos reservados.</p>
     </div>
   </footer>
 </Layout>
 
 <style>
-	.section-header {
-		text-align: center;
-		margin-bottom: var(--spacing-lg);
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-	}
-	
-	h2 {
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
-	}
-	
-	.alquimia-section, .coleccion-section {
-		padding: var(--spacing-xl) 0;
-	}
-	
-	.grid-benefits {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-		gap: var(--spacing-md);
-	}
-	
-	.benefit-card {
-		background: white;
-		padding: var(--spacing-md);
-		border-radius: var(--radius-lg);
-		box-shadow: var(--shadow-soft);
-		border: 1px solid #f0f0f0;
-	}
-	
-	.product-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-		gap: var(--spacing-md);
-	}
+  /* Section Styles */
+  .section {
+    padding: var(--space-xl) 0;
+  }
 
-  .grid-2 {
+  .section-header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-lg);
+  }
+
+  .section-label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    padding: 0.5rem 1rem;
+    background: rgba(25, 230, 60, 0.1);
+    border-radius: var(--radius-full);
+  }
+
+  .section-title {
+    margin-bottom: var(--space-sm);
+    font-size: clamp(2rem, 4vw, 3rem);
+  }
+
+  .section-description {
+    color: var(--color-text-light);
+    font-size: 1.1rem;
+  }
+
+  /* Products Section */
+  .products-section {
+    background: var(--color-bg-alt);
+  }
+
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  /* About Section Styles */
+  .about-section {
+    background: var(--color-bg);
+  }
+
+  .about__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--space-xl);
     align-items: center;
   }
 
-  .historia-section {
-    padding: var(--spacing-xl) 0;
-    background: #f7f1e3;
-  }
-
-  .image-box img {
+  .about__image {
     width: 100%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-soft);
+    height: auto;
+    object-fit: cover;
   }
 
-  footer {
-    padding: var(--spacing-xl) 0 var(--spacing-md);
-    background: var(--color-text);
-    color: white;
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
   }
 
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+  .section-text {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
   }
 
-  .footer-links h4 {
-    margin-bottom: 1rem;
-    font-family: var(--font-main);
+  .about__stats {
+    display: flex;
+    gap: var(--space-lg);
+    margin-top: var(--space-md);
+    padding-top: var(--space-md);
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+  }
+
+  .stat-item {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.8rem;
-    letter-spacing: 1px;
+    letter-spacing: 0.1em;
+    color: var(--color-text-light);
   }
 
-  .footer-links a {
-    display: block;
-    color: rgba(255,255,255,0.6);
-    text-decoration: none;
-    margin-bottom: 0.5rem;
-    font-size: 0.9rem;
+  /* Footer */
+  .footer {
+    background: var(--color-text);
+    color: var(--color-white);
+    padding: var(--space-xl) 0 var(--space-md);
   }
 
-  .footer-bottom {
+  .footer__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-lg);
     text-align: center;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: var(--spacing-md);
-    font-size: 0.8rem;
-    opacity: 0.5;
   }
 
-  @media (max-width: 768px) {
-    .grid-2, .footer-grid {
+  .footer__logo {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+  }
+
+  .footer__tagline {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .footer__links {
+    display: flex;
+    gap: var(--space-lg);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .footer__links a {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color var(--transition-fast);
+  }
+
+  .footer__links a:hover {
+    color: var(--color-primary);
+  }
+
+  .footer__social {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .footer__social a {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--color-primary);
+  }
+
+  .footer__copy {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: var(--space-md);
+  }
+
+  @media (max-width: 968px) {
+    .about__grid {
       grid-template-columns: 1fr;
+      text-align: center;
+    }
+
+    .about__image-container {
+      order: 2;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .about__content {
+      order: 1;
+    }
+
+    .about__stats {
+      justify-content: center;
     }
   }
 </style>
+

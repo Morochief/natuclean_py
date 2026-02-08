@@ -1,130 +1,107 @@
 /** @jsxImportSource solid-js */
-import { createSignal } from 'solid-js';
+import { createSignal, Show } from 'solid-js';
 
-interface ProductProps {
-    id: string;
-    name: string;
-    price: string;
-    image: string;
-    tag?: string;
+// Types
+interface ProductCardProps {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  image: string;
+  scentNotes?: {
+    top: string[];
+    heart: string[];
+    base: string[];
+  };
+  isNew?: boolean;
+  isPopular?: boolean;
 }
 
-export default function ProductCard(props: ProductProps) {
-    const [isHovered, setIsHovered] = createSignal(false);
+export default function ProductCard(props: ProductCardProps) {
+  const [isHovered, setIsHovered] = createSignal(false);
+  const [isAdded, setIsAdded] = createSignal(false);
 
-    return (
-        <div
-            class="product-card"
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-        >
-            <div class="image-wrapper">
-                <img src={props.image} alt={props.name} />
-                {props.tag && <span class="tag">{props.tag}</span>}
-                <div class={`overlay ${isHovered() ? 'visible' : ''}`}>
-                    <button class="quick-add">Vista Rápida</button>
-                </div>
-            </div>
-            <div class="details">
-                <h3>{props.name}</h3>
-                <p class="price">{props.price}</p>
-            </div>
+  const handleAddToCart = () => {
+    setIsAdded(true);
+    setTimeout(() => setIsAdded(false), 2000);
+  };
 
-            <style>{`
-        .product-card {
-          background: white;
-          padding: 1rem;
-          border-radius: 1.5rem;
-          transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-          cursor: pointer;
-          border: 1px solid #f0f0f0;
-        }
-        
-        .product-card:hover {
-          transform: translateY(-10px);
-          box-shadow: 0 20px 40px rgba(0,0,0,0.06);
-        }
-        
-        .image-wrapper {
-          position: relative;
-          aspect-ratio: 1;
-          overflow: hidden;
-          border-radius: 1rem;
-          background: #f9f9f9;
-        }
-        
-        .image-wrapper img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          transition: transform 0.6s ease;
-        }
-        
-        .product-card:hover img {
-          transform: scale(1.1);
-        }
-        
-        .tag {
-          position: absolute;
-          top: 1rem;
-          left: 1rem;
-          background: rgba(25, 230, 60, 0.9);
-          color: white;
-          padding: 0.2rem 0.8rem;
-          border-radius: 1rem;
-          font-size: 0.7rem;
-          font-weight: 700;
-        }
-        
-        .overlay {
-          position: absolute;
-          inset: 0;
-          background: rgba(0,0,0,0.2);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          backdrop-filter: blur(4px);
-        }
-        
-        .overlay.visible {
-          opacity: 1;
-        }
-        
-        .quick-add {
-          background: white;
-          color: black;
-          border: none;
-          padding: 0.8rem 1.5rem;
-          border-radius: 2rem;
-          font-weight: 600;
-          font-size: 0.9rem;
-          cursor: pointer;
-          transform: translateY(20px);
-          transition: transform 0.4s ease;
-        }
-        
-        .overlay.visible .quick-add {
-          transform: translateY(0);
-        }
-        
-        .details {
-          padding-top: 1.5rem;
-          text-align: center;
-        }
-        
-        .details h3 {
-          font-size: 1.2rem;
-          margin-bottom: 0.5rem;
-        }
-        
-        .price {
-          font-weight: 600;
-          color: #19e63c;
-          font-size: 1.1rem;
-        }
-      `}</style>
+  return (
+    <article
+      class="product-card"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      <div class="product-card__image-container">
+        <div class="product-card__image-frame">
+          <img
+            src={props.image}
+            alt={props.name}
+            class="product-card__image"
+            loading="lazy"
+          />
         </div>
-    );
+        
+        {/* Badges */}
+        <div class="product-card__badges">
+          <Show when={props.isNew}>
+            <span class="product-card__badge product-card__badge--new">
+              Nuevo
+            </span>
+          </Show>
+          <Show when={props.isPopular}>
+            <span class="product-card__badge product-card__badge--popular">
+              Popular
+            </span>
+          </Show>
+        </div>
+
+        {/* Quick Add Button */}
+        <button
+          class={`product-card__quick-add ${isAdded() ? 'added' : ''}`}
+          onClick={handleAddToCart}
+          aria-label="Agregar al carrito"
+        >
+          <Show when={!isAdded()} fallback="✓">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+              <line x1="3" y1="6" x2="21" y2="6"/>
+              <path d="M16 10a4 4 0 0 1-8 0"/>
+            </svg>
+          </Show>
+        </button>
+      </div>
+
+      <div class="product-card__content">
+        <h3 class="product-card__name">{props.name}</h3>
+        <p class="product-card__description">{props.description}</p>
+        
+        <Show when={props.scentNotes}>
+          <div class="product-card__notes">
+            <Show when={props.scentNotes?.top.length}>
+              <div class="product-card__note">
+                <span class="product-card__note-label">Salida</span>
+                <span class="product-card__note-value">{props.scentNotes?.top.join(', ')}</span>
+              </div>
+            </Show>
+          </div>
+        </Show>
+
+        <div class="product-card__footer">
+          <span class="product-card__price">${props.price.toFixed(2)}</span>
+          <a href={`/product/${props.id}`} class="product-card__link">
+            Ver Detalle
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      {/* Hover Effect Overlay */}
+      <div 
+        class={`product-card__overlay ${isHovered() ? 'visible' : ''}`}
+      />
+    </article>
+  );
 }

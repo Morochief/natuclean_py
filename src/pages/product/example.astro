@@ -1,0 +1,199 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import ScentTriangle from '../../components/ScentTriangle';
+
+const product = {
+  id: 'vela-lavanda',
+  name: 'Vela de Lavanda & Eucalipto',
+  description: 'Una combinación relajante de lavanda francesa y eucaliptus fresco. Ideal para momentos de meditación y descanso.',
+  price: 28.00,
+  image: '/images/candle-detail.jpg',
+  scentNotes: {
+    top: [
+      { name: 'Eucalipto', description: 'Fresco y estimulante' },
+      { name: 'Menta', description: 'Ligera y revitalizante' },
+    ],
+    heart: [
+      { name: 'Lavanda', description: 'El alma floral' },
+      { name: 'Romero', description: 'Herbáceo y calmante' },
+    ],
+    base: [
+      { name: 'Sándalo', description: 'Cálido y envolvente' },
+      { name: 'Vainilla', description: 'Dulce y reconfortante' },
+    ]
+  }
+};
+---
+
+<Layout title={product.name}>
+  <Header />
+  
+  <main class="product-detail">
+    <div class="product-detail__hero">
+      <div class="container">
+        <div class="product-detail__grid">
+          {/* Product Image */}
+          <div class="product-detail__image">
+            <div class="product-detail__image-frame">
+              <img src={product.image} alt={product.name} />
+            </div>
+          </div>
+          
+          {/* Product Info */}
+          <div class="product-detail__info">
+            <span class="product-detail__label">Nuevo</span>
+            <h1 class="product-detail__title">{product.name}</h1>
+            <p class="product-detail__description">{product.description}</p>
+            <p class="product-detail__price">${product.price.toFixed(2)}</p>
+            
+            <div class="product-detail__actions">
+              <div class="product-detail__quantity">
+                <button class="product-detail__qty-btn">-</button>
+                <span class="product-detail__qty-value">1</span>
+                <button class="product-detail__qty-btn">+</button>
+              </div>
+              <button class="btn btn-primary">
+                Agregar al Carrito
+              </button>
+            </div>
+            
+            <div class="product-detail__features">
+              <div class="product-detail__feature">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                </svg>
+                <span>100% Natural</span>
+              </div>
+              <div class="product-detail__feature">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 6v6l4 2"/>
+                </svg>
+                <span>45+ horas</span>
+              </div>
+              <div class="product-detail__feature">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+                <span>Artesanal</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {/* Scent Triangle Section */}
+    <section class="product-detail__scent">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Perfil Olfativo</span>
+          <h2 class="section-title">Triángulo de Notas</h2>
+        </div>
+        
+        <div class="scent-container">
+          <ScentTriangle 
+            top={product.scentNotes.top}
+            heart={product.scentNotes.heart}
+            base={product.scentNotes.base}
+            client:load
+          />
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copy">© 2024 Natuclean_py. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .product-detail {
+    padding-top: 80px;
+  }
+  
+  .product-detail__hero {
+    padding: var(--space-lg) 0;
+    background: var(--color-bg-alt);
+  }
+  
+  .product-detail__grid {
+    display: grid;
+n  grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+    align-items: center;
+  }
+  
+  .product-detail__image-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    border-radius: 200px 200px 30px 30px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .product-detail__image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .product-detail__info {
+    max-width: 500px;
+  }
+  
+  .product-detail__label {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    padding: 0.4rem 0.8rem;
+    background: rgba(25, 230, 60, 0.1);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .product-detail__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .product-detail__description {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-md);
+  }
+  
+  .product-detail__price {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-md);
+  }
+  
+  .product-detail__actions {
+    display: flex;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .product-detail__quantity {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: 0.5rem;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .product-detail__qty-btn {
+    width: 36px;
+    height: 36px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background: none;\n    border: none;\n    font-size: 1.25rem;\n    cursor: pointer;\n    border-radius: var(--radius-sm);\n    transition: background var(--transition-fast);\n  }\n  \n  .product-detail__qty-btn:hover {\n    background: var(--color-bg-alt);\n  }\n  \n  .product-detail__qty-value {\n    font-weight: 600;\n    min-width: 40px;\n    text-align: center;\n  }\n  \n  .product-detail__features {\n    display: flex;\n    gap: var(--space-md);\n    flex-wrap: wrap;\n  }\n  \n  .product-detail__feature {\n    display: flex;\n    align-items: center;\n    gap: var(--space-xs);\n    font-size: 0.85rem;\n    color: var(--color-text-light);\n  }\n  \n  .product-detail__feature svg {\n    color: var(--color-primary);\n  }\n  \n  .product-detail__scent {\n    padding: var(--space-xl) 0;\n    background: var(--color-bg);\n  }\n  \n  .scent-container {\n    max-width: 500px;\n    margin: 0 auto;\n  }\n  \n  .section-header {\n    text-align: center;\n    margin-bottom: var(--space-lg);\n  }\n  \n  @media (max-width: 968px) {\n    .product-detail__grid {\n      grid-template-columns: 1fr;\n      text-align: center;\n    }\n    \n    .product-detail__info {\n      max-width: none;\n    }\n    \n    .product-detail__actions {\n      justify-content: center;\n    }\n    \n    .product-detail__features {\n      justify-content: center;\n    }\n  }\n</style>\n

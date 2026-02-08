@@ -19,10 +19,18 @@ To create an "Elite" web app for artisanal candles that feels premium, interacti
 
 ## 5. Roadmap
 - [x] **Iteration 1:** Refine Hero Section with more dramatic visuals and "elite" typography.
-- [ ] **Iteration 2 (Elite):** Create a dynamic Product Detail page with a **Scent Triangle** (Salida/Corazón/Fondo).
-- [ ] **Iteration 3 (Elite):** Add a "Ritual de Cuidado" section with premium iconography.
-- [ ] **Iteration 4 (Elite):** Implement a "Club Natuclean" (Subscription/Newsletter) with an exclusive aesthetic.
-- [ ] **Iteration 5:** Add "Alquimia" interactive section (the ingredients explanation).
+- [x] **Hero Implementation:** New Hero.astro with arched frames, floating badges, animations
+- [x] **Header/Nav:** Minimal fixed header with blur effect
+- [x] **ProductCard:** Glassmorphism card with Solid.js interactivity
+- [x] **Iteration 2 (Elite):** Create a dynamic Product Detail page with a **Scent Triangle** (Salida/Corazón/Fondo).
+- [x] **ScentTriangle:** Interactive SVG triangle visualization with animations
+- [x] **Product Detail Page:** Example page with split layout
+- [x] **Iteration 3 (Elite):** Add a "Ritual de Cuidado" section with premium iconography.
+- [x] **RitualSection:** 4-step ritual with SVG icons and hover animations
+- [x] **Iteration 4 (Elite):** Implement a "Club Natuclean" (Subscription/Newsletter) with an exclusive aesthetic.
+- [x] **ClubNewsletter:** Subscription tiers with Solid.js, dark theme
+- [x] **Iteration 5:** Add "Alquimia" interactive section (the ingredients explanation).
+- [x] **IngredientsSection:** Grid of 6 ingredients with SVG icons, hover animations, benefits
 - [ ] **Iteration 6:** Implement full Contact form with Hono backend.
 
 ## 6. Creative Freedom

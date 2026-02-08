@@ -1,0 +1,179 @@
+---
+// Header.astro - Minimal Navigation
+---
+
+<header class="header">
+  <div class="header__inner">
+    <a href="/" class="header__logo">
+      Natuclean<span class="header__logo--accent">_py</span>
+    </a>
+    
+    <nav class="header__nav">
+      <a href="#productos" class="header__link">Colección</a>
+      <a href="#historia" class="header__link">Historia</a>
+      <a href="#ingredientes" class="header__link">Alquimia</a>
+      <a href="#club" class="header__link">Club</a>
+    </nav>
+    
+    <div class="header__actions">
+      <button class="header__cart" aria-label="Carrito">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="header__cart-count">0</span>
+      </button>
+    </div>
+    
+    <button class="header__mobile-toggle" aria-label="Menú">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<style>
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(253, 252, 249, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all var(--transition-base);
+  }
+
+  .header__inner {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 1rem var(--container-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .header__logo {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .header__logo--accent {
+    color: var(--color-primary);
+    font-style: italic;
+  }
+
+  .header__nav {
+    display: flex;
+    gap: var(--space-md);
+  }
+
+  .header__link {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    position: relative;
+    transition: color var(--transition-fast);
+  }
+
+  .header__link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--color-primary);
+    transition: width var(--transition-base);
+  }
+
+  .header__link:hover {
+    color: var(--color-primary);
+  }
+
+  .header__link:hover::after {
+    width: 100%;
+  }
+
+  .header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .header__cart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--color-text);
+    transition: color var(--transition-fast);
+  }
+
+  .header__cart:hover {
+    color: var(--color-primary);
+  }
+
+  .header__cart-count {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 16px;
+    height: 16px;
+    font-size: 0.65rem;
+    font-weight: 600;
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .header__mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    padding: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .header__mobile-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--color-text);
+    transition: all var(--transition-fast);
+  }
+
+  @media (max-width: 768px) {
+    .header__nav {
+      display: none;
+    }
+
+    .header__cart {
+      margin-left: auto;
+    }
+
+    .header__mobile-toggle {
+      display: flex;
+    }
+  }
+</style>

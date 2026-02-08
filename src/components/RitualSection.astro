@@ -1,0 +1,152 @@
+---
+// RitualSection.astro - Candle Care Guide
+---
+
+<section id="ritual" class="ritual">
+  <div class="container">
+    <div class="ritual__header">
+      <span class="ritual__label">Experiencia</span>
+      <h2 class="ritual__title">El Ritual de Cuidado</h2>
+      <p class="ritual__description">
+        Sigue estos pasos para prolongar la vida de tu vela y disfrutar de una fragancia óptima en cada encendido.
+      </p>
+    </div>
+    
+    <div class="ritual__grid">
+      <div class="ritual__step">
+        <div class="ritual__step-number">01</div>
+        <div class="ritual__step-icon">✂️</div>
+        <h3 class="ritual__step-title">Recorte de Mecha</h3>
+        <p class="ritual__step-content">
+          Antes de cada encendido, recorta la mecha a unos 5mm. Esto evita el humo negro y asegura un quemado uniforme.
+        </p>
+      </div>
+
+      <div class="ritual__step">
+        <div class="ritual__step-number">02</div>
+        <div class="ritual__step-icon">🕯️</div>
+        <h3 class="ritual__step-title">El Primer Encendido</h3>
+        <p class="ritual__step-content">
+          Deja que la cera se derrita hasta los bordes del envase. Esto evita que se forme un "túnel" en el centro.
+        </p>
+      </div>
+
+      <div class="ritual__step">
+        <div class="ritual__step-number">03</div>
+        <div class="ritual__step-icon">⏱️</div>
+        <h3 class="ritual__step-title">Tiempo Ideal</h3>
+        <p class="ritual__step-content">
+          No enciendas la vela por más de 4 horas seguidas. Deja que la cera se solidifique completamente antes de volver a usarla.
+        </p>
+      </div>
+
+      <div class="ritual__step">
+        <div class="ritual__step-number">04</div>
+        <div class="ritual__step-icon">🌬️</div>
+        <h3 class="ritual__step-title">Apagado Seguro</h3>
+        <p class="ritual__step-content">
+          Usa un apagavelas en lugar de soplar. Esto evita salpicaduras de cera y mantiene el aroma puro en el ambiente.
+        </p>
+      </div>
+    </div>
+
+    <div class="ritual__tip">
+      <div class="ritual__tip-content">
+        <strong>Tip de Alquimista:</strong> Una vez terminada la vela, limpia el envase con agua tibia y jabón. ¡Son perfectos para decorar o guardar accesorios!
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .ritual {
+    padding: var(--space-xl) 0;
+    background: var(--color-bg);
+  }
+
+  .ritual__header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+  }
+
+  .ritual__label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+    padding: 0.5rem 1rem;
+    background: rgba(212, 163, 115, 0.1);
+    border-radius: var(--radius-full);
+  }
+
+  .ritual__title {
+    margin-bottom: var(--space-sm);
+  }
+
+  .ritual__description {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+  }
+
+  .ritual__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .ritual__step {
+    position: relative;
+    padding-left: var(--space-lg);
+  }
+
+  .ritual__step-number {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-family: var(--font-display);
+    font-size: 4rem;
+    font-weight: 700;
+    color: rgba(0, 0, 0, 0.03);
+    line-height: 1;
+  }
+
+  .ritual__step-icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .ritual__step-title {
+    font-size: 1.5rem;
+    margin-bottom: var(--space-xs);
+  }
+
+  .ritual__step-content {
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+
+  .ritual__tip {
+    margin-top: var(--space-xl);
+    padding: var(--space-md);
+    background: var(--color-bg-alt);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  }
+
+  .ritual__tip-content {
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+
+  @media (max-width: 768px) {
+    .ritual__grid {
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+    }
+  }
+</style>
