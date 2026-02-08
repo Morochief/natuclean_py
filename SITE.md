@@ -18,11 +18,15 @@ To create an "Elite" web app for artisanal candles that feels premium, interacti
 - [ ] Contact/Newsletter API
 
 ## 5. Roadmap
-- [x] **Iteration 1 (Current):** Refine Hero Section with more dramatic visuals and "elite" typography.
-- [ ] **Iteration 2:** Create a dynamic Product Detail page for each candle.
-- [ ] **Iteration 3:** Add "Alquimia" interactive section (the ingredients explanation).
-- [ ] **Iteration 4:** Implement full Contact form with Hono backend.
+- [x] **Iteration 1:** Refine Hero Section with more dramatic visuals and "elite" typography.
+- [ ] **Iteration 2 (Elite):** Create a dynamic Product Detail page with a **Scent Triangle** (Salida/Corazón/Fondo).
+- [ ] **Iteration 3 (Elite):** Add a "Ritual de Cuidado" section with premium iconography.
+- [ ] **Iteration 4 (Elite):** Implement a "Club Natuclean" (Subscription/Newsletter) with an exclusive aesthetic.
+- [ ] **Iteration 5:** Add "Alquimia" interactive section (the ingredients explanation).
+- [ ] **Iteration 6:** Implement full Contact form with Hono backend.
 
 ## 6. Creative Freedom
 - Add a "Scent Profiler" quiz later.
 - 3D Candle viewer.
+- "Arched" image frames for editorial look.
+
