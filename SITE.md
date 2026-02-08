@@ -1,4 +1,4 @@
-# SITE.md - Natuclean_py Elite Web App
+# SITE.md - Natuclean Elite Web App
 
 ## 1. Vision
 To create an "Elite" web app for artisanal candles that feels premium, interactive, and fast. Using the specific stack: Astro + Solid.js + Hono + Cloudflare.
@@ -7,7 +7,7 @@ To create an "Elite" web app for artisanal candles that feels premium, interacti
 `15309306769721999071`
 
 ## 3. Brand Identity
-- **Name:** Natuclean_py
+- **Name:** Natuclean
 - **Colors:** Zen Minimalist (#fdfcf9 bg, #19e63c primary green, #d4a373 earthy accent)
 - **Vibe:** Lujo Sostenible, Artesanía, Serenidad.
 
