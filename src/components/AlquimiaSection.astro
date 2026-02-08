@@ -1,0 +1,270 @@
+---
+// AlquimiaSection.astro - Fresh Component to Bypass Cache
+---
+
+<section id="ingredientes" class="alquimia">
+  <div class="container">
+    <div class="alquimia__header">
+      <span class="alquimia__label">Transparencia Total</span>
+      <h2 class="alquimia__title">Nuestra Alquimia</h2>
+      <p class="alquimia__description">
+        Cada ingrediente es seleccionado cuidadosamente por sus propiedades aromáticas y beneficios naturales
+      </p>
+    </div>
+    
+    <div class="alquimia__grid">
+      <!-- Ingredient 1 -->
+      <div class="alquimia-card">
+        <div class="alquimia-card__icon">🕯️</div>
+        <h3 class="alquimia-card__name">Cera de Soja</h3>
+        <p class="alquimia-card__category">Base Natural</p>
+        <p class="alquimia-card__description">
+          Quemado limpio, sin tóxicos. Produce mayor cantidad de fragancia y arde más tiempo que la cera de parafina.
+        </p>
+        <div class="alquimia-card__benefits">
+          <span class="alquimia-card__benefit">✓ Biodegradable</span>
+          <span class="alquimia-card__benefit">✓ Vegana</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 2 -->
+      <div class="alquimia-card">
+        <div class="alquimia-card__icon">🌸</div>
+        <h3 class="alquimia-card__name">Aceites Esenciales</h3>
+        <p class="alquimia-card__category">Fragancia</p>
+        <p class="alquimia-card__description">
+          100% puros y naturales. Sin fragancias sintéticas ni ftalatos. Aromaterapia genuina.
+        </p>
+        <div class="alquimia-card__benefits">
+          <span class="alquimia-card__benefit">✓ Sin Parabenos</span>
+          <span class="alquimia-card__benefit">✓ Testeado</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 3 -->
+      <div class="alquimia-card">
+        <div class="alquimia-card__icon">🧵</div>
+        <h3 class="alquimia-card__name">Mecha de Algodón</h3>
+        <p class="alquimia-card__category">Combustión</p>
+        <p class="alquimia-card__description">
+          100% algodón orgánico sin plomo. Quemado uniforme desde el primer momento hasta el último.
+        </p>
+        <div class="alquimia-card__benefits">
+          <span class="alquimia-card__benefit">✓ Sin Plomo</span>
+          <span class="alquimia-card__benefit">✓ Orgánica</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 4 -->
+      <div class="alquimia-card">
+        <div class="alquimia-card__icon">🌿</div>
+        <h3 class="alquimia-card__name">Extractos Botánicos</h3>
+        <p class="alquimia-card__category">Complemento</p>
+        <p class="alquimia-card__description">
+          Extractos naturales de hierbas y flores. Añaden profundidad y complejidad a cada fragancia.
+        </p>
+        <div class="alquimia-card__benefits">
+          <span class="alquimia-card__benefit">✓ Sostenible</span>
+          <span class="alquimia-card__benefit">✓ Artesanal</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 5 -->
+      <div class="alquimia-card">
+        <div class="alquimia-card__icon">🌼</div>
+        <h3 class="alquimia-card__name">Vainilla Natural</h3>
+        <p class="alquimia-card__category">Esencia</p>
+        <p class="alquimia-card__description">
+          Vainilla Bourbon de Madagascar. Aroma cálido y reconfortante sin artificial.
+        </p>
+        <div class="alquimia-card__benefits">
+          <span class="alquimia-card__benefit">✓ Fair Trade</span>
+          <span class="alquimia-card__benefit">✓ Orgánico</span>
+        </div>
+      </div>
+      
+      <!-- Ingredient 6 -->
+      <div class="alquimia-card">
+        <div class="alquimia-card__icon">🍋</div>
+        <h3 class="alquimia-card__name">Cítricos Frescos</h3>
+        <p class="alquimia-card__category">Nota de Salida</p>
+        <p class="alquimia-card__description">
+          Aceites de naranja, limón y pomelo. Energía positiva y frescura natural.
+        </p>
+        <div class="alquimia-card__benefits">
+          <span class="alquimia-card__benefit">✓ Antibacterial</span>
+          <span class="alquimia-card__benefit">✓ Energizante</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="alquimia__commitment">
+      <div class="alquimia__commitment-icon">🌿</div>
+      <div class="alquimia__commitment-text">
+        <strong>Nuestro Compromiso</strong>
+        <p>Zero residuos. Empaques reciclables y biodegradables. Cada vela es una obra de arte sostenible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .alquimia {
+    padding: var(--space-xl) 0;
+    background: var(--color-bg-alt);
+  }
+  
+  .alquimia__header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+  }
+  
+  .alquimia__label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    padding: 0.5rem 1rem;
+    background: rgba(25, 230, 60, 0.1);
+    border-radius: var(--radius-full);
+  }
+  
+  .alquimia__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .alquimia__description {
+    font-size: 1.1rem;
+    color: var(--color-text-light);
+  }
+  
+  .alquimia__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .alquimia-card {
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .alquimia-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .alquimia-card__icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    background: rgba(25, 230, 60, 0.08);
+    border-radius: 50%;
+    transition: all var(--transition-base);
+    color: var(--color-primary);
+    user-select: none;
+  }
+  
+  .alquimia-card:hover .alquimia-card__icon {
+    background: var(--color-primary);
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .alquimia-card__name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .alquimia-card__category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .alquimia-card__description {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+  
+  .alquimia-card__benefits {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+  
+  .alquimia-card__benefit {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    padding: 0.25rem 0.5rem;
+    background: rgba(25, 230, 60, 0.1);
+    border-radius: var(--radius-sm);
+  }
+  
+  .alquimia__commitment {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .alquimia__commitment-icon {
+    font-size: 3rem;
+    flex-shrink: 0;
+  }
+  
+  .alquimia__commitment-text strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .alquimia__commitment-text p {
+    color: var(--color-text-light);
+    margin: 0;
+  }
+  
+  @media (max-width: 968px) {
+    .alquimia__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .alquimia__commitment {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .alquimia__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
