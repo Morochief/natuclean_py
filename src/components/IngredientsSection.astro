@@ -15,12 +15,7 @@
     <div class="ingredients__grid">
       <!-- Ingredient 1 -->
       <div class="ingredient-card">
-        <div class="ingredient-card__icon">
-          <svg viewBox="0 0 48 48" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-            <path d="M24 12c-5 7-8 12-8 16s3 6 8 6 8-2 8-6c0-4-3-9-8-16z"/>
-          </svg>
-        </div>
+        <div class="ingredient-card__icon">🕯</div>
         <h3 class="ingredient-card__name">Cera de Soja</h3>
         <p class="ingredient-card__category">Base Natural</p>
         <p class="ingredient-card__description">
@@ -34,13 +29,7 @@
       
       <!-- Ingredient 2 -->
       <div class="ingredient-card">
-        <div class="ingredient-card__icon">
-          <svg viewBox="0 0 48 48" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-            <circle cx="24" cy="18" r="6"/>
-            <path d="M16 32c0-6 3.5-10 8-10s8 4 8 10"/>
-          </svg>
-        </div>
+        <div class="ingredient-card__icon">🌸</div>
         <h3 class="ingredient-card__name">Aceites Esenciales</h3>
         <p class="ingredient-card__category">Fragancia</p>
         <p class="ingredient-card__description">
@@ -54,14 +43,7 @@
       
       <!-- Ingredient 3 -->
       <div class="ingredient-card">
-        <div class="ingredient-card__icon">
-          <svg viewBox="0 0 48 48" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="20" y="10" width="8" height="28" rx="2"/>
-            <line x1="24" y1="14" x2="24" y2="18"/>
-            <line x1="24" y1="22" x2="24" y2="26"/>
-            <line x1="24" y1="30" x2="24" y2="34"/>
-          </svg>
-        </div>
+        <div class="ingredient-card__icon">🕯</div>
         <h3 class="ingredient-card__name">Mecha de Algodón</h3>
         <p class="ingredient-card__category">Combustión</p>
         <p class="ingredient-card__description">
@@ -75,13 +57,7 @@
       
       <!-- Ingredient 4 -->
       <div class="ingredient-card">
-        <div class="ingredient-card__icon">
-          <svg viewBox="0 0 48 48" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-            <path d="M24 16l-4 8h8l-4 8"/>
-            <circle cx="24" cy="28" r="3"/>
-          </svg>
-        </div>
+        <div class="ingredient-card__icon">🌿</div>
         <h3 class="ingredient-card__name">Extractos Botánicos</h3>
         <p class="ingredient-card__category">Complemento</p>
         <p class="ingredient-card__description">
@@ -95,12 +71,7 @@
       
       <!-- Ingredient 5 -->
       <div class="ingredient-card">
-        <div classicon">
-          <svg viewBox="="ingredient-card__0 0 48 48" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-            <ellipse cx="24" cy="26" rx="8" ry="6"/>
-          </svg>
-        </div>
+        <div class="ingredient-card__icon">🍦</div>
         <h3 class="ingredient-card__name">Vainilla Natural</h3>
         <p class="ingredient-card__category">Esencia</p>
         <p class="ingredient-card__description">
@@ -114,14 +85,7 @@
       
       <!-- Ingredient 6 -->
       <div class="ingredient-card">
-        <div class="ingredient-card__icon">
-          <svg viewBox="0 0 48 48" width="32" height="32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-
-            <circle cx="24" cy="16" r="4"/>
-            <circle cx="18" cy="26" r="4"/>
-            <circle cx="30" cy="26" r="4"/>
-          </svg>
-        </div>
+        <div class="ingredient-card__icon">🍋</div>
         <h3 class="ingredient-card__name">Cítricos Frescos</h3>
         <p class="ingredient-card__category">Nota de Salida</p>
         <p class="ingredient-card__description">
@@ -208,21 +172,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 2.5rem;
     background: rgba(25, 230, 60, 0.08);
     border-radius: 50%;
     transition: all var(--transition-base);
-    color: var(--color-primary);
   }
   
   .ingredient-card:hover .ingredient-card__icon {
     background: var(--color-primary);
-    color: var(--color-white);
-    transform: scale(1.1);
-  }
-  
-  .ingredient-card__icon svg {
-    width: 32px !important;
-    height: 32px !important;
+    transform: scale(1.1) rotate(5deg);
   }
   
   .ingredient-card__name {
