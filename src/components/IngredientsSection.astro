@@ -154,4 +154,115 @@ n        </div>
   .ingredients__header {
     text-align: center;
     max-width: 600px;
-n    margin: 0 auto var(--space-xl);\n  }\n  \n  .ingredients__label {\n    display: inline-block;\n    font-family: var(--font-body);\n    font-size: 0.75rem;\n    font-weight: 600;\n    letter-spacing: 0.15em;\n    text-transform: uppercase;\n    color: var(--color-primary);\n    margin-bottom: var(--space-sm);\n    padding: 0.5rem 1rem;\n    background: rgba(25, 230, 60, 0.1);\n    border-radius: var(--radius-full);\n  }\n  \n  .ingredients__title {\n    font-size: clamp(2rem, 4vw, 3rem);\n    margin-bottom: var(--space-sm);\n  }\n  \n  .ingredients__description {\n    font-size: 1.1rem;\n    color: var(--color-text-light);\n  }\n  \n  .ingredients__grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: var(--space-md);\n    margin-bottom: var(--space-xl);\n  }\n  \n  .ingredient-card {\n    background: var(--color-white);\n    padding: var(--space-lg);\n    border-radius: var(--radius-lg);\n    text-align: center;\n    transition: all var(--transition-base);\n    box-shadow: var(--shadow-sm);\n  }\n  \n  .ingredient-card:hover {\n    transform: translateY(-8px);\n    box-shadow: var(--shadow-lg);\n  }\n  \n  .ingredient-card__icon {\n    width: 64px;\n    height: 64px;\n    margin: 0 auto var(--space-md);\n    color: var(--color-primary);\n  }\n  \n  .ingredient-card__icon svg {\n    width: 100%;\n    height: 100%;\n  }\n  \n  .ingredient-card__name {\n    font-family: var(--font-display);\n    font-size: 1.25rem;\n    font-weight: 600;\n    margin-bottom: var(--space-xs);\n  }\n  \n  .ingredient-card__category {\n    font-size: 0.75rem;\n    font-weight: 600;\n    letter-spacing: 0.1em;\n    text-transform: uppercase;\n    color: var(--color-accent);\n    margin-bottom: var(--space-sm);\n  }\n  \n  .ingredient-card__description {\n    font-size: 0.9rem;\n    color: var(--color-text-light);\n    line-height: 1.6;\n    margin-bottom: var(--space-md);\n  }\n  \n  .ingredient-card__benefits {\n    display: flex;\n    justify-content: center;\n    gap: var(--space-sm);\n    flex-wrap: wrap;\n  }\n  \n  .ingredient-card__benefit {\n    font-size: 0.75rem;\n    font-weight: 500;\n    color: var(--color-primary);\n    padding: 0.25rem 0.5rem;\n    background: rgba(25, 230, 60, 0.1);\n    border-radius: var(--radius-sm);\n  }\n  \n  .ingredients__commitment {\n    display: flex;\n    align-items: center;\n    gap: var(--space-md);\n    padding: var(--space-lg);\n    background: var(--color-white);\n    border-radius: var(--radius-lg);\n    box-shadow: var(--shadow-md);\n  }\n  \n  .ingredients__commitment-icon {\n    font-size: 3rem;\n  }\n  \n  .ingredients__commitment-text strong {\n    display: block;\n    font-family: var(--font-display);\n    font-size: 1.25rem;\n    margin-bottom: var(--space-xs);\n  }\n  \n  .ingredients__commitment-text p {\n    color: var(--color-text-light);\n    margin: 0;\n  }\n  \n  @media (max-width: 968px) {\n    .ingredients__grid {\n      grid-template-columns: repeat(2, 1fr);\n    }\n    \n    .ingredients__commitment {\n      flex-direction: column;\n      text-align: center;\n    }\n  }\n  \n  @media (max-width: 480px) {\n    .ingredients__grid {\n      grid-template-columns: 1fr;\n    }\n  }\n</style>\n
+    margin: 0 auto var(--space-xl);
+  }
+  
+  .ingredients__label {
+    display: inline-block;
+    font-family: var(--font-body);\n    font-size: 0.75rem;\n    font-weight: 600;\n    letter-spacing: 0.15em;\n    text-transform: uppercase;\n    color: var(--color-primary);\n    margin-bottom: var(--space-sm);\n    padding: 0.5rem 1rem;\n    background: rgba(25, 230, 60, 0.1);\n    border-radius: var(--radius-full);\n  }\n  \n  .ingredients__title {\n    font-size: clamp(2rem, 4vw, 3rem);\n    margin-bottom: var(--space-sm);\n  }\n  \n  .ingredients__description {\n    font-size: 1.1rem;\n    color: var(--color-text-light);\n  }\n  \n  .ingredients__grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: var(--space-md);\n    margin-bottom: var(--space-xl);\n  }\n  \n  .ingredient-card {\n    background: var(--color-white);\n    padding: var(--space-lg);\n    border-radius: var(--radius-lg);\n    text-align: center;\n    transition: all var(--transition-base);\n    box-shadow: var(--shadow-sm);\n  }\n  \n  .ingredient-card:hover {\n    transform: translateY(-8px);\n    box-shadow: var(--shadow-lg);\n  }\n  \n  .ingredient-card__icon {
+    width: 56px;
+    height: 56px;
+    margin: 0 auto var(--space-md);
+    color: var(--color-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(25, 230, 60, 0.05);
+    border-radius: 50%;
+    transition: all var(--transition-base);
+  }
+  
+  .ingredient-card:hover .ingredient-card__icon {
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: scale(1.1) rotate(5deg);
+  }
+  
+  .ingredient-card__icon svg {
+    width: 28px;
+    height: 28px;
+    transition: all var(--transition-base);
+  }
+  
+  .ingredient-card__name {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .ingredient-card__category {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .ingredient-card__description {
+    font-size: 0.9rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+  
+  .ingredient-card__benefits {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+  }
+  
+  .ingredient-card__benefit {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    padding: 0.25rem 0.5rem;
+    background: rgba(25, 230, 60, 0.1);
+    border-radius: var(--radius-sm);
+  }
+  
+  .ingredients__commitment {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    padding: var(--space-lg);
+    background: var(--color-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .ingredients__commitment-icon {
+    font-size: 3rem;
+  }
+  
+  .ingredients__commitment-text strong {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .ingredients__commitment-text p {
+    color: var(--color-text-light);
+    margin: 0;
+  }
+  
+  @media (max-width: 968px) {
+    .ingredients__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ingredients__commitment {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .ingredients__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
