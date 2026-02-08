@@ -1,0 +1,156 @@
+---
+// InstagramFeed.astro - Simple Instagram Grid
+---
+
+<section class="instagram" id="instagram">
+  <div class="container">
+    <div class="instagram__header">
+      <span class="instagram__label">Síguenos</span>
+      <h2 class="instagram__title">@natuclean</h2>
+      <p class="instagram__description">
+        Descubrebehind the scenes y momentos especiales
+      </p>
+    </div>
+    
+    <div class="instagram__grid">
+      <!-- Instagram Post 1 -->
+      <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__post">
+        <img src="/images/hero-candle.jpg" alt="Proceso artesanal" loading="lazy" />
+        <div class="instagram__overlay">
+          <span class="instagram__icon">❤️</span>
+        </div>
+      </a>
+      
+      <!-- Instagram Post 2 -->
+      <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__post">
+        <img src="/images/soap-botanic.jpg" alt="Producto terminado" loading="lazy" />
+        <div class="instagram__overlay">
+          <span class="instagram__icon">❤️</span>
+        </div>
+      </a>
+      
+      <!-- Instagram Post 3 -->
+      <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__post">
+        <img src="/images/collection-set.jpg" alt="Colección completa" loading="lazy" />
+        <div class="instagram__overlay">
+          <span class="instagram__icon">❤️</span>
+        </div>
+      </a>
+      
+      <!-- Instagram Post 4 -->
+      <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__post">
+        <img src="/images/candle-detail.jpg" alt="Detalle de producto" loading="lazy" />
+        <div class="instagram__overlay">
+          <span class="instagram__icon">❤️</span>
+        </div>
+      </a>
+    </div>
+    
+    <div class="instagram__cta">
+      <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="btn btn-secondary">
+        Ver más en Instagram
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .instagram {
+    padding: var(--space-xl) 0;
+    background: var(--color-bg-alt);
+  }
+  
+  .instagram__header {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto var(--space-lg);
+  }
+  
+  .instagram__label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    padding: 0.5rem 1rem;
+    background: rgba(25, 230, 60, 0.1);
+    border-radius: var(--radius-full);
+  }
+  
+  .instagram__title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: var(--space-xs);
+  }
+  
+  .instagram__description {
+    color: var(--color-text-light);
+  }
+  
+  .instagram__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-sm);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .instagram__post {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+  }
+  
+  .instagram__post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+  }
+  
+  .instagram__post:hover img {
+    transform: scale(1.1);
+  }
+  
+  .instagram__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+  }
+  
+  .instagram__post:hover .instagram__overlay {
+    opacity: 1;
+  }
+  
+  .instagram__icon {
+    font-size: 2rem;
+  }
+  
+  .instagram__cta {
+    text-align: center;
+  }
+  
+  @media (max-width: 768px) {
+    .instagram__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .instagram__grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+    }
+  }
+</style>

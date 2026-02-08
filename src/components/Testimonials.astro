@@ -1,0 +1,189 @@
+---
+// Testimonials.astro - Customer Reviews Section
+---
+
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="testimonials__header">
+      <span class="testimonials__label">Clientes Felices</span>
+      <h2 class="testimonials__title">Lo que dicen<br />nuestros clientes</h2>
+    </div>
+    
+    <div class="testimonials__grid">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <div class="testimonial__stars">{'⭐⭐⭐⭐⭐'}</div>
+        <p class="testimonial__text">
+          "Las mejores velas que he probado. El aroma de Lavanda es increíble para relajarse después de un día largo. La calidad artesanal se nota en cada detalle."
+        </p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">MG</div>
+          <div class="testimonial__info">
+            <strong>María González</strong>
+            <span>Compró: Lavanda & Vainilla</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <div class="testimonial__stars">{'⭐⭐⭐⭐⭐'}</div>
+        <p class="testimonial__text">
+          "Regalo perfecto para mi esposa. La presentación es artesanal y única. El aroma de Bosque de Niebla nos transporta a momentos especiales."
+        </p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">CF</div>
+          <div class="testimonial__info">
+            <strong>Carlos Ferreira</strong>
+            <span>Compró: Kit Regalo Bosque</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <div class="testimonial__stars">{'⭐⭐⭐⭐⭐'}</div>
+        <p class="testimonial__text">
+          "Me encanta que sean 100% naturales. Quemado limpio, sin tóxicos y el aroma dura horas. Definitivamente mi marca favorita."
+        </p>
+        <div class="testimonial__author">
+          <div class="testimonial__avatar">LR</div>
+          <div class="testimonial__info">
+            <strong>Laura Rodríguez</strong>
+            <span>Compró: Amanecer Cítrico</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Trust Signals -->
+    <div class="trust-signals">
+      <div class="trust-signal">
+        <span class="trust-signal-icon">🔒</span>
+        <span>Pago Seguro</span>
+      </div>
+      <div class="trust-signal">
+        <span class="trust-signal-icon">🚚</span>
+        <span>Envío Gratis +$50</span>
+      </div>
+      <div class="trust-signal">
+        <span class="trust-signal-icon">↩️</span>
+        <span>Devolución 30 días</span>
+      </div>
+      <div class="trust-signal">
+        <span class="trust-signal-icon">⭐</span>
+        <span>+500 clientes satisfechos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials {
+    padding: var(--space-xl) 0;
+    background: var(--color-bg);
+  }
+  
+  .testimonials__header {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto var(--space-xl);
+  }
+  
+  .testimonials__label {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    padding: 0.5rem 1rem;
+    background: rgba(25, 230, 60, 0.1);
+    border-radius: var(--radius-full);
+  }
+  
+  .testimonials__title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.2;
+  }
+  
+  .testimonials__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-xl);
+  }
+  
+  .testimonial-card {
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+  
+  .testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .testimonial__stars {
+    font-size: 1.25rem;
+    margin-bottom: var(--space-sm);
+  }
+  
+  .testimonial__text {
+    font-size: 1rem;
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+    font-style: italic;
+  }
+  
+  .testimonial__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+  
+  .testimonial__avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  
+  .testimonial__info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .testimonial__info strong {
+    font-size: 0.95rem;
+    color: var(--color-text);
+  }
+  
+  .testimonial__info span {
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+  
+  @media (max-width: 768px) {
+    .testimonials__grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .trust-signals {
+      flex-direction: column;
+      gap: var(--space-sm);
+    }
+  }
+</style>

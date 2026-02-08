@@ -13,6 +13,7 @@ To create an "Elite" web app for artisanal candles that feels premium, interacti
 
 ## 4. Sitemap
 - [x] Home Page (Landing)
+- [x] Blog Page (Aromatherapy content)
 - [ ] Product Detail Page (Dynamic)
 - [ ] About/Process Page
 - [ ] Contact/Newsletter API
@@ -31,7 +32,22 @@ To create an "Elite" web app for artisanal candles that feels premium, interacti
 - [x] **ClubNewsletter:** Subscription tiers with Solid.js, dark theme
 - [x] **Iteration 5:** Add "Alquimia" interactive section (the ingredients explanation).
 - [x] **IngredientsSection:** Grid of 6 ingredients with SVG icons, hover animations, benefits
-- [ ] **Iteration 6:** Implement full Contact form with Hono backend.
+- [x] **Iteration 6:** Implement full Contact form with Hono backend.
+- [x] **Iteration 7 (Practical):** SEO local optimization, smooth transitions, skeleton loading
+- [x] **Layout.astro:** Enhanced SEO with Open Graph, Twitter cards, local business schema
+- [x] **global.css:** Premium transitions (cubic-bezier), skeleton loading, trust signals
+- [x] **Iteration 8 (Practical):** Trust signals, testimonials, Instagram feed
+- [x] **Testimonials:** Customer reviews section with 3 testimonial cards
+- [x] **InstagramFeed:** Simple Instagram grid with hover effects
+- [x] **Blog Page:** Aromatherapy benefits article with SEO optimization
+
+## 6. Practical Improvements (Semana 1-4)
+- **SEO Local:** Meta tags optimized for Paraguay, Open Graph, Twitter cards
+- **Performance:** Skeleton loading, smooth transitions (cubic-bezier)
+- **Trust Signals:** Payment security, free shipping, returns, satisfaction guarantee
+- **Social Proof:** Customer testimonials with product references
+- **Content Marketing:** Blog with aromatherapy benefits
+- **Instagram Integration:** Simple feed linking to @natuclean
 
 ## 6. Creative Freedom
 - Add a "Scent Profiler" quiz later.

@@ -1,0 +1,163 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+---
+
+<Layout title="Beneficios de la Aromaterapia" description="Descubre los beneficios de la aromaterapia con velas artesanales Natuclean. Información sobre aceites esenciales y bienestar natural.">
+  <Header />
+  
+  <main>
+    <article class="blog-post">
+      <header class="blog-header">
+        <div class="container">
+          <a href="/#blog" class="blog__back">← Volver al inicio</a>
+          <h1 class="blog__title">5 Beneficios de la Aromaterapia con Velas</h1>
+          <p class="blog__meta">8 de febrero, 2026 • 5 min de lectura</p>
+        </div>
+      </header>
+      
+      <div class="container blog__content">
+        <p class="blog__intro">
+          La aromaterapia es una práctica milenaria que utiliza los aceites esenciales de las plantas para mejorar nuestro bienestar físico y emocional. Descubre cómo las velas artesanales pueden transformar tu hogar.
+        </p>
+        
+        <h2>1. Reduce el Estrés y la Ansiedad</h2>
+        <p>
+          Los aceites esenciales como la lavanda y la manzanilla tienen propiedades relajantes comprovadas. Cuando enciendes una vela Natuclean de Lavanda & Vainilla, estás creando un ambiente propicio para la calma mental y la reducción del estrés acumulado del día.
+        </p>
+        
+        <h2>2. Mejora la Calidad del Sueño</h2>
+        <p>
+          La exposición a ciertos aromas antes de dormir puede ayudar a regular tus ciclos de sueño. Las notas de lavada y Vainilla Bourbon de nuestras velas crean el ambiente perfecto para un descanso reparador.
+        </p>
+        
+        <h2>3. Aumenta la Concentración</h2>
+        <p>
+          Aromas como el pino, eucalipto y menta pueden mejorar la claridad mental y la concentración. Nuestra vela <a href="/product/vela-bosque">Bosque de Niebla</a> es perfecta para espacios de trabajo o estudio.
+        </p>
+        
+        <h2>4. Eleva el Estado de Ánimo</h2>
+        <p>
+          Los cítricos como el pomelo y el limón tienen propiedades energizantes. La vela <a href="/product/vela-citrica">Amanecer Cítrico</a> es ideal para comenzar el día con energía positiva.
+        </p>
+        
+        <h2>5. Purifica el Aire</h2>
+        <p>
+          A diferencia de las velas de parafina, nuestras velas de soja queman cleanly sin liberar toxinas. Los aceites esenciales naturales pueden ayudar a purificar el aire de tu hogar de forma natural.
+        </p>
+        
+        <div class="blog__cta">
+          <h3>Descubre tu aroma perfecto</h3>
+          <p>Explora nuestra colección de velas artesanales y encuentra la fragancia que mejor se adapte a tu estilo de vida.</p>
+          <a href="/#productos" class="btn btn-primary">Ver Colección</a>
+        </div>
+      </div>
+    </article>
+  </main>
+  
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__copy">© 2024 Natuclean. Velas artesanales 100% naturales.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .blog-post {
+    padding-top: var(--space-xl);
+  }
+  
+  .blog-header {
+    text-align: center;
+    padding: var(--space-lg) 0;
+    background: var(--color-bg-alt);
+    margin-bottom: var(--space-lg);
+  }
+  
+  .blog__back {
+    display: inline-block;
+    margin-bottom: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+  
+  .blog__back:hover {
+    text-decoration: underline;
+  }
+  
+  .blog__title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    margin-bottom: var(--space-sm);
+  }
+  
+  .blog__meta {
+    color: var(--color-text-light);
+    font-size: 0.9rem;
+  }
+  
+  .blog__content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding-bottom: var(--space-xl);
+  }
+  
+  .blog__intro {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: var(--color-text-light);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  .blog__content h2 {
+    font-size: 1.75rem;
+    margin: var(--space-lg) 0 var(--space-sm);
+  }
+  
+  .blog__content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+  
+  .blog__content a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+  
+  .blog__content a:hover {
+    text-decoration: underline;
+  }
+  
+  .blog__cta {
+    background: var(--color-bg-alt);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    margin-top: var(--space-xl);
+  }
+  
+  .blog__cta h3 {
+    margin-bottom: var(--space-sm);
+  }
+  
+  .blog__cta p {
+    margin-bottom: var(--space-md);
+  }
+  
+  .footer {
+    background: var(--color-text);
+    color: var(--color-white);
+    padding: var(--space-md) 0;
+  }
+  
+  .footer__copy {
+    text-align: center;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0;
+  }
+</style>

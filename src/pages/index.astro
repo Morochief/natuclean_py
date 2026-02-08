@@ -5,6 +5,8 @@ import Hero from '../components/Hero.astro';
 import ProductCard from '../components/ProductCard.tsx';
 import RitualSection from '../components/RitualSection.astro';
 import AlquimiaSection from '../components/IngredientsSection.astro';
+import Testimonials from '../components/Testimonials.astro';
+import InstagramFeed from '../components/InstagramFeed.astro';
 import ClubNewsletter from '../components/ClubNewsletter.tsx';
 import ContactForm from '../components/ContactForm.tsx';
 
@@ -50,7 +52,7 @@ const products = [
 ];
 ---
 
-<Layout title="Natuclean_py - Velas Artesanales de Lujo">
+<Layout title="Velas Artesanales de Lujo">
   <Header />
   <main>
     <Hero />
@@ -86,7 +88,7 @@ const products = [
             <span class="section-label">Nuestra Esencia</span>
             <h2 class="section-title">Artesanía con Propósito</h2>
             <p class="section-text">
-              En Natuclean_py, creemos que el bienestar comienza con lo que dejamos entrar en nuestro hogar. Nuestras velas no son solo objetos de decoración; son portales a momentos de paz y conexión con la naturaleza.
+              En Natuclean, creemos que el bienestar comienza con lo que dejamos entrar en nuestro hogar. Nuestras velas no son solo objetos de decoración; son portales a momentos de paz y conexión con la naturaleza.
             </p>
             <p class="section-text">
               Utilizamos cera de soja 100% natural, pabilos de algodón de alta calidad y aceites esenciales puros para garantizar un quemado limpio y una fragancia que perdura.
@@ -116,6 +118,12 @@ const products = [
     <!-- Alquimia / Ingredientes -->
     <AlquimiaSection />
     
+    <!-- Testimonios -->
+    <Testimonials />
+    
+    <!-- Instagram Feed -->
+    <InstagramFeed />
+    
     <!-- Club Natuclean -->
     <ClubNewsletter client:visible />
     
@@ -135,6 +143,9 @@ const products = [
           <a href="#historia">Historia</a>
           <a href="#ritual">Ritual</a>
           <a href="#ingredientes">Alquimia</a>
+          <a href="/blog/beneficios-aromaterapia">Blog</a>
+          <a href="#instagram">Instagram</a>
+          <a href="#testimonios">Testimonios</a>
           <a href="#club">Club</a>
           <a href="#contacto">Contacto</a>
         </div>
