@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import ProductCard from '../components/ProductCard';
+
+const products = [
+  { id: '1', name: 'Vela Esencial', price: 'Gs. 95.000', image: 'https://images.unsplash.com/photo-1603006375271-7f3b3b5fc9bb?auto=format&fit=crop&q=80&w=800', tag: 'Destacado' },
+  { id: '2', name: 'Jabón Botánico', price: 'Gs. 45.000', image: 'https://images.unsplash.com/photo-1600857062241-98e5dba7f214?auto=format&fit=crop&q=80&w=800' },
+  { id: '3', name: 'Vela Coco & Vainilla', price: 'Gs. 90.000', image: 'https://images.unsplash.com/photo-1596433809252-260c2745dfdd?auto=format&fit=crop&q=80&w=800' },
+  { id: '4', name: 'Duo Armonía', price: 'Gs. 180.000', image: 'https://images.unsplash.com/photo-1620427352355-6df3d8544d37?auto=format&fit=crop&q=80&w=800', tag: 'Oferta' }
+];
+---
+
+<Layout title="Natuclean_py - Lujo Sostenible">
+	<main>
+		<Hero />
+		
+		<section id="alquimia" class="alquimia-section container">
+			<div class="section-header">
+				<h2>Alquimia Vegetal</h2>
+				<p>La pureza es nuestra promesa. Solo ceras vegetales, sin parafinas.</p>
+			</div>
+			
+			<div class="grid-benefits">
+				<div class="benefit-card">
+					<h3>Cera de Soja</h3>
+					<p>Combustión limpia y duradera que respeta tu aire. Biodegradable y renovable.</p>
+				</div>
+				<div class="benefit-card">
+					<h3>Cera de Palma</h3>
+					<p>Textura única y cristalización natural ("efecto pluma"). De origen ético certificado.</p>
+				</div>
+				<div class="benefit-card">
+					<h3>Cera de Coco</h3>
+					<p>Suavidad cremosa y excelente difusión de aromas botánicos. Hidratación superior.</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="coleccion" class="coleccion-section container">
+			<div class="section-header">
+				<h2>Favoritos de Temporada</h2>
+				<p>Explora nuestras creaciones más queridas.</p>
+			</div>
+			
+			<div class="product-grid">
+				{products.map(p => (
+					<ProductCard client:load {...p} />
+				))}
+			</div>
+		</section>
+
+		<section id="historia" class="historia-section">
+      <div class="container grid-2">
+        <div class="image-box">
+          <img src="https://images.unsplash.com/photo-1572726710706-7e95df9f3ee2?auto=format&fit=crop&q=80&w=1000" alt="Artesanía" />
+        </div>
+        <div class="content-box">
+          <h2>El Latido de Natuclean</h2>
+          <p>Nuestra historia comienza con las manos de artesanos paraguayos. Cada vela es vertida individualmente, respetando los tiempos de la naturaleza.</p>
+          <p>No creamos solo productos, creamos rituales de bienestar que honran la tierra.</p>
+        </div>
+      </div>
+    </section>
+	</main>
+  
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h2>Natuclean_py</h2>
+        <p>Lujo sostenible hecho en Paraguay.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Explorar</h4>
+        <a href="#">Velas de Soja</a>
+        <a href="#">Jabones Artesanales</a>
+        <a href="#">Kits de Regalo</a>
+      </div>
+      <div class="footer-links">
+        <h4>Info</h4>
+        <a href="#">Envíos</a>
+        <a href="#">Cuidados</a>
+        <a href="#">Contacto</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Natuclean_py. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+	.section-header {
+		text-align: center;
+		margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+	}
+	
+	h2 {
+		font-size: 2.5rem;
+		margin-bottom: 1rem;
+	}
+	
+	.alquimia-section, .coleccion-section {
+		padding: var(--spacing-xl) 0;
+	}
+	
+	.grid-benefits {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-md);
+	}
+	
+	.benefit-card {
+		background: white;
+		padding: var(--spacing-md);
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-soft);
+		border: 1px solid #f0f0f0;
+	}
+	
+	.product-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: var(--spacing-md);
+	}
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    align-items: center;
+  }
+
+  .historia-section {
+    padding: var(--spacing-xl) 0;
+    background: #f7f1e3;
+  }
+
+  .image-box img {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+  }
+
+  footer {
+    padding: var(--spacing-xl) 0 var(--spacing-md);
+    background: var(--color-text);
+    color: white;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .footer-links h4 {
+    margin-bottom: 1rem;
+    font-family: var(--font-main);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
+
+  .footer-links a {
+    display: block;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+  }
+
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: var(--spacing-md);
+    font-size: 0.8rem;
+    opacity: 0.5;
+  }
+
+  @media (max-width: 768px) {
+    .grid-2, .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

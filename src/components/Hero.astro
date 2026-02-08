@@ -1,0 +1,86 @@
+---
+---
+
+<section class="hero premium-gradient">
+  <div class="container">
+    <div class="hero-content animate-fade-in">
+      <span class="badge">Artesanía Paraguaya</span>
+      <h1>Momentos de paz, <br/><span class="accent">rincones de luz pura</span></h1>
+      <p>Velas artesanales creadas con almas botánicas y ceras 100% vegetales.</p>
+      <div class="actions">
+        <a href="#coleccion" class="btn btn-primary">Ver Colección</a>
+        <a href="#historia" class="btn btn-outline">Nuestra Historia</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xl) 0;
+  }
+  
+  .hero-content {
+    max-width: 700px;
+  }
+  
+  .badge {
+    background: var(--color-primary);
+    color: white;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    margin-bottom: var(--spacing-sm);
+    display: inline-block;
+  }
+  
+  h1 {
+    font-size: clamp(3rem, 8vw, 5rem);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text);
+  }
+  
+  .accent {
+    color: var(--color-accent);
+    font-style: italic;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-md);
+    opacity: 0.8;
+  }
+  
+  .actions {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+  
+  .btn {
+    padding: 1rem 2rem;
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+  }
+  
+  .btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .btn-primary {
+    background: var(--color-text);
+    color: white;
+  }
+  
+  .btn-outline {
+    border: 2px solid var(--color-text);
+    color: var(--color-text);
+  }
+</style>
