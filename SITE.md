@@ -18,7 +18,7 @@ To create an "Elite" web app for artisanal candles that feels premium, interacti
 - [ ] Contact/Newsletter API
 
 ## 5. Roadmap
-- [ ] **Iteration 1 (Current):** Refine Hero Section with more dramatic visuals and "elite" typography.
+- [x] **Iteration 1 (Current):** Refine Hero Section with more dramatic visuals and "elite" typography.
 - [ ] **Iteration 2:** Create a dynamic Product Detail page for each candle.
 - [ ] **Iteration 3:** Add "Alquimia" interactive section (the ingredients explanation).
 - [ ] **Iteration 4:** Implement full Contact form with Hono backend.
