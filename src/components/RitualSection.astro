@@ -2,7 +2,7 @@
 // RitualSection.astro - Premium Care Ritual Section
 ---
 
-<section class="ritual">
+<section class="ritual" id="ritual">
   <div class="container">
     <div class="ritual__header">
       <span class="ritual__label">Experiencia Completa</span>
@@ -15,66 +15,57 @@
     <div class="ritual__steps">
       <!-- Step 1 -->
       <div class="ritual__step">
-        <div class="ritual__step-number">01</div>
-        <div class="ritual__step-icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="32" cy="32" r="28" />
-            <path d="M32 20v24M20 32h24" />
-          </svg>
+        <div class="ritual__step-outer">
+          <div class="ritual__step-inner">
+            <span class="ritual__step-icon">🏠</span>
+          </div>
         </div>
+        <span class="ritual__step-number">01</span>
         <h3 class="ritual__step-title">Prepara el Espacio</h3>
         <p class="ritual__step-description">
-          Elige un lugar tranquilo. Retira tapa y permite que la vela respire 
-          unos minutos antes de encender.
+          Elige un lugar tranquilo. Retira la tapa y permite que la vela respire unos minutos antes de encender.
         </p>
       </div>
       
       <!-- Step 2 -->
       <div class="ritual__step">
-        <div class="ritual__step-number">02</div>
-        <div class="ritual__step-icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M32 8c-4 12-12 20-8 32 4 12 20 16 24 0 4-8-4-20-8-32" />
-            <path d="M32 40v8" />
-            <circle cx="32" cy="32" r="4" fill="currentColor" />
-          </svg>
+        <div class="ritual__step-outer">
+          <div class="ritual__step-inner">
+            <span class="ritual__step-icon">🔥</span>
+          </div>
         </div>
+        <span class="ritual__step-number">02</span>
         <h3 class="ritual__step-title">Enciende con Intención</h3>
         <p class="ritual__step-description">
-          Enciende la mecha con atención plena. Visualiza tu intención 
-          mientras la llama cobra vida.
+          Enciende la mecha con atención plena. Visualiza tu intención mientras la llama cobra vida.
         </p>
       </div>
       
       <!-- Step 3 -->
       <div class="ritual__step">
-        <div class="ritual__step-number">03</div>
-        <div class="ritual__step-icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M32 8c16 8 20 24 12 36-8 12-24 16-24 0 0-8 8-20 12-36" />
-            <path d="M24 32c0-4 4-8 8-8s8 4 8 8" />
-          </svg>
+        <div class="ritual__step-outer">
+          <div class="ritual__step-inner">
+            <span class="ritual__step-icon">⏰</span>
+          </div>
         </div>
+        <span class="ritual__step-number">03</span>
         <h3 class="ritual__step-title">Deja Arder</h3>
         <p class="ritual__step-description">
-          Permite que arda hasta que la superficie se derrita completamente. 
-          Esto asegura una quemada uniforme.
+          Permite que arda hasta que la superficie se derrita completamente. Esto asegura una quemada uniforme.
         </p>
       </div>
       
       <!-- Step 4 -->
       <div class="ritual__step">
-        <div class="ritual__step-number">04</div>
-        <div class="ritual__step-icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M32 8c8 8 12 16 8 28-4 8-12 12-16 8s-4-12 0-20c4-8 4-12 8-16" />
-            <path d="M32 36v12" />
-          </svg>
+        <div class="ritual__step-outer">
+          <div class="ritual__step-inner">
+            <span class="ritual__step-icon">💨</span>
+          </div>
         </div>
+        <span class="ritual__step-number">04</span>
         <h3 class="ritual__step-title">Extingue con Cariño</h3>
         <p class="ritual__step-description">
-          Usa un soplido suave o la tapa para apagar. Nunca soples directamente. 
-          Deja enfriar antes de mover.
+          Usa un soplido suave o la tapa para apagar. Nunca soples directamente. Deja enfriar antes de mover.
         </p>
       </div>
     </div>
@@ -83,16 +74,16 @@
       <h4 class="ritual__tips-title">Cuidados Adicionales</h4>
       <div class="ritual__tips-grid">
         <div class="ritual__tip">
-          <span class="ritual__tip-icon">✂</span>
-          <span>Recorta la mecha a 5mm antes de cada uso</span>
+          <span class="ritual__tip-icon">✂️</span>
+          <span>Recorta la mecha a 5mm</span>
         </div>
         <div class="ritual__tip">
           <span class="ritual__tip-icon">⏱</span>
           <span>Máximo 4 horas continuas</span>
         </div>
         <div class="ritual__tip">
-          <span class="ritual__tip-icon">🌡</span>
-          <span>Almacena en lugar fresco y seco</span>
+          <span class="ritual__tip-icon">❄️</span>
+          <span>Almacena en lugar fresco</span>
         </div>
       </div>
     </div>
@@ -102,7 +93,7 @@
 <style>
   .ritual {
     padding: var(--space-xl) 0;
-    background: var(--color-bg-alt);
+    background: var(--color-bg);
   }
   
   .ritual__header {
@@ -141,41 +132,181 @@
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-md);
     margin-bottom: var(--space-xl);
+    position: relative;
+  }
+  
+  /* Connector line */
+  .ritual__steps::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 15%;
+n    right: 15%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-primary) 0%, transparent 100%);
+    z-index: 0;
   }
   
   .ritual__step {
     position: relative;
     text-align: center;
-    padding: var(--space-md);
-    background: var(--color-white);
-    border-radius: var(--radius-lg);
-    transition: all var(--transition-base);
-    box-shadow: var(--shadow-sm);
+    padding: var(--space-lg) var(--space-sm) var(--space-md);
+    z-index: 1;
   }
   
-  .ritual__step:hover {
+  .ritual__step-outer {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-md);
+    background: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+  }
+  
+  .ritual__step-inner {
+    width: 70px;
+    height: 70px;
+    background: rgba(25, 230, 60, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all var(--transition-base);
+  }
+  
+  .ritual__step:hover .ritual__step-outer {
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
   }
   
-  .ritual__step-number {
-    position: absolute;
-    top: var(--space-sm);
-    left: var(--space-sm);
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    color: rgba(0, 0, 0, 0.05);
-    line-height: 1;
+  .ritual__step:hover .ritual__step-inner {
+    background: var(--color-primary);
   }
   
   .ritual__step-icon {
-    width: 64px;
-    height: 64px;
-n    margin: 0 auto var(--space-sm);
-    color: var(--color-primary);
+    font-size: 2rem;
+    transition: transform var(--transition-base);
   }
   
-  .ritual__step-icon svg {
-    width: 100%;\n    height: 100%;\n  }
-  \n  .ritual__step-title {\n    font-family: var(--font-display);\n    font-size: 1.1rem;\n    font-weight: 600;\n    margin-bottom: var(--space-xs);\n    color: var(--color-text);\n  }\n  \n  .ritual__step-description {\n    font-size: 0.85rem;\n    color: var(--color-text-light);\n    line-height: 1.6;\n  }\n  \n  .ritual__tips {\n    background: var(--color-white);\n    border-radius: var(--radius-lg);\n    padding: var(--space-lg);\n    box-shadow: var(--shadow-sm);\n  }\n  \n  .ritual__tips-title {\n    font-family: var(--font-display);\n    font-size: 1.25rem;\n    text-align: center;\n    margin-bottom: var(--space-md);\n  }\n  \n  .ritual__tips-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 1fr);\n    gap: var(--space-md);\n  }\n  \n  .ritual__tip {\n    display: flex;\n    align-items: center;\n    gap: var(--space-sm);\n    padding: var(--space-sm);\n    background: var(--color-bg-alt);\n    border-radius: var(--radius-md);\n  }\n  \n  .ritual__tip-icon {\n    width: 32px;\n    height: 32px;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    background: var(--color-primary);\n    color: var(--color-black);\n    border-radius: 50%;\n    font-size: 0.9rem;\n  }\n  \n  .ritual__tip span:last-child {\n    font-size: 0.85rem;\n    color: var(--color-text);\n  }\n  \n  @media (max-width: 968px) {\n    .ritual__steps {\n      grid-template-columns: repeat(2, 1fr);\n    }\n    \n    .ritual__tips-grid {\n      grid-template-columns: 1fr;\n    }\n  }\n  \n  @media (max-width: 480px) {\n    .ritual__steps {\n      grid-template-columns: 1fr;\n    }\n  }\n</style>\n
+  .ritual__step:hover .ritual__step-icon {
+    transform: scale(1.1);
+  }
+  
+  .ritual__step-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.1em;
+  }
+  
+  .ritual__step-title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+  
+  .ritual__step-description {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    line-height: 1.6;
+  }
+  
+  .ritual__tips {
+    background: var(--color-bg-alt);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .ritual__tips-title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    text-align: center;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+  
+  .ritual__tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+  
+  .ritual__tip {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-base);
+  }
+  
+  .ritual__tip:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+  }
+  
+  .ritual__tip-icon {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-primary);
+    border-radius: 50%;
+    font-size: 0.8rem;
+  }
+  
+  .ritual__tip span:last-child {
+    font-size: 0.85rem;
+    color: var(--color-text);
+    font-weight: 500;
+  }
+  
+  @media (max-width: 968px) {
+    .ritual__steps {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .ritual__steps::before {
+      display: none;
+    }
+    
+    .ritual__tips-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .ritual__steps {
+      grid-template-columns: 1fr;
+    }
+    
+    .ritual__step-outer {
+      width: 64px;
+      height: 64px;
+    }
+    
+    .ritual__step-inner {
+      width: 54px;
+      height: 54px;
+    }
+    
+    .ritual__step-icon {
+      font-size: 1.5rem;
+    }
+  }
+</style>

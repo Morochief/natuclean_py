@@ -4,8 +4,9 @@ import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import ProductCard from '../components/ProductCard.tsx';
 import RitualSection from '../components/RitualSection.astro';
-import AlquimiaSection from '../components/AlquimiaSection.astro';
+import AlquimiaSection from '../components/IngredientsSection.astro';
 import ClubNewsletter from '../components/ClubNewsletter.tsx';
+import ContactForm from '../components/ContactForm.tsx';
 
 const products = [
   {
@@ -117,6 +118,9 @@ const products = [
     
     <!-- Club Natuclean -->
     <ClubNewsletter client:visible />
+    
+    <!-- Contacto -->
+    <ContactForm client:visible />
   </main>
   
   <footer class="footer">
@@ -132,6 +136,7 @@ const products = [
           <a href="#ritual">Ritual</a>
           <a href="#ingredientes">Alquimia</a>
           <a href="#club">Club</a>
+          <a href="#contacto">Contacto</a>
         </div>
         <div class="footer__social">
           <a href="#" aria-label="Instagram">IG</a>
