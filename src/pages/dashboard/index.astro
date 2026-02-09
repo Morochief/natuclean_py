@@ -1,0 +1,93 @@
+---
+import DashboardLayout from '../../layouts/DashboardLayout.astro';
+import Sidebar from '../../components/dashboard/Sidebar.astro';
+import KpiCard from '../../components/dashboard/KpiCard.astro';
+import AlertBadge from '../../components/dashboard/AlertBadge.astro';
+import DispatchTable from '../../components/dashboard/DispatchTable.tsx';
+import TrackingMap from '../../components/dashboard/TrackingMap.tsx';
+
+// Mock KPI data (would come from API/database in production)
+const kpiData = {
+  unitsInRoute: { value: 12, trend: { value: '+3', direction: 'up' } },
+  deliveriesToday: { value: '8/15', trend: { value: '53%', direction: 'up' } },
+  activeAlerts: { value: 2, trend: null },
+  fleetEfficiency: { value: '94%', trend: { value: '+2%', direction: 'up' } },
+};
+---
+
+<DashboardLayout title="Dashboard">
+  <div class="dashboard">
+    <Sidebar />
+    
+    <div class="dashboard__main">
+      <!-- Header -->
+      <header class="dashboard__header">
+        <h1 class="dashboard__header-title">Natuclean Logistics</h1>
+        <div class="dashboard__header-actions">
+          <AlertBadge count={2} />
+          <div class="user-avatar">
+            <span>AD</span>
+          </div>
+        </div>
+      </header>
+      
+      <!-- Content -->
+      <div class="dashboard__content">
+        <!-- KPI Grid -->
+        <div class="bento-grid">
+          <KpiCard 
+            value={kpiData.unitsInRoute.value}
+            label="Unidades en Ruta"
+            icon="truck"
+            variant="primary"
+            trend={kpiData.unitsInRoute.trend}
+          />
+          <KpiCard 
+            value={kpiData.deliveriesToday.value}
+            label="Entregas Hoy"
+            icon="check"
+            variant="success"
+            trend={kpiData.deliveriesToday.trend}
+          />
+          <KpiCard 
+            value={kpiData.activeAlerts.value}
+            label="Alertas Activas"
+            icon="alert"
+            variant="danger"
+          />
+          <KpiCard 
+            value={kpiData.fleetEfficiency.value}
+            label="Eficiencia Fleet"
+            icon="chart"
+            variant="warning"
+            trend={kpiData.fleetEfficiency.trend}
+          />
+        </div>
+        
+        <!-- Main Content Grid -->
+        <div class="bento-grid--main">
+          <!-- Dispatch Table (Interactive Island) -->
+          <DispatchTable client:visible />
+          
+          <!-- Tracking Map (Interactive Island - loads immediately) -->
+          <TrackingMap client:load />
+        </div>
+      </div>
+    </div>
+  </div>
+</DashboardLayout>
+
+<style>
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    background: var(--dashboard-accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+</style>

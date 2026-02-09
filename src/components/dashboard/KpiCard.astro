@@ -1,0 +1,71 @@
+---
+// KpiCard.astro - Static KPI Display Component
+
+interface Props {
+  value: string | number;
+  label: string;
+  trend?: {
+    value: string;
+    direction: 'up' | 'down';
+  };
+  variant?: 'primary' | 'success' | 'warning' | 'danger';
+  icon?: 'truck' | 'check' | 'alert' | 'chart';
+}
+
+const { value, label, trend, variant = 'primary', icon = 'chart' } = Astro.props;
+---
+
+<div class="kpi-card">
+  <div class="kpi-card__header">
+    <div class={`kpi-card__icon kpi-card__icon--${variant}`}>
+      {icon === 'truck' && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="1" y="3" width="15" height="13"/>
+          <polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/>
+          <circle cx="5.5" cy="18.5" r="2.5"/>
+          <circle cx="18.5" cy="18.5" r="2.5"/>
+        </svg>
+      )}
+      {icon === 'check' && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+          <polyline points="22,4 12,14.01 9,11.01"/>
+        </svg>
+      )}
+      {icon === 'alert' && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+          <line x1="12" y1="9" x2="12" y2="13"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+        </svg>
+      )}
+      {icon === 'chart' && (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="20" x2="18" y2="10"/>
+          <line x1="12" y1="20" x2="12" y2="4"/>
+          <line x1="6" y1="20" x2="6" y2="14"/>
+        </svg>
+      )}
+    </div>
+    
+    {trend && (
+      <div class={`kpi-card__trend kpi-card__trend--${trend.direction}`}>
+        {trend.direction === 'up' ? (
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="23,6 13.5,15.5 8.5,10.5 1,18"/>
+            <polyline points="17,6 23,6 23,12"/>
+          </svg>
+        ) : (
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+            <polyline points="23,18 13.5,8.5 8.5,13.5 1,6"/>
+            <polyline points="17,18 23,18 23,12"/>
+          </svg>
+        )}
+        {trend.value}
+      </div>
+    )}
+  </div>
+  
+  <div class="kpi-card__value">{value}</div>
+  <div class="kpi-card__label">{label}</div>
+</div>

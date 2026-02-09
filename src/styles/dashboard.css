@@ -1,0 +1,435 @@
+/* ========================================
+   Dashboard - Corporate Palette & Styles
+   ======================================== */
+
+:root {
+    /* Corporate Blues */
+    --dashboard-primary: #0f172a;
+    /* Slate 900 - Sidebar bg */
+    --dashboard-secondary: #1e293b;
+    /* Slate 800 - Cards dark */
+    --dashboard-accent: #3b82f6;
+    /* Blue 500 - Accent */
+    --dashboard-accent-light: #60a5fa;
+    /* Blue 400 - Hover */
+
+    /* Status Colors */
+    --dashboard-success: #22c55e;
+    /* Green 500 - Delivered */
+    --dashboard-warning: #f59e0b;
+    /* Amber 500 - In Route */
+    --dashboard-danger: #ef4444;
+    /* Red 500 - Alert */
+    --dashboard-info: #06b6d4;
+    /* Cyan 500 - Info */
+
+    /* Light Theme Surfaces */
+    --dashboard-bg: #f1f5f9;
+    /* Slate 100 - Main bg */
+    --dashboard-surface: #ffffff;
+    /* White - Cards */
+    --dashboard-text: #0f172a;
+    /* Slate 900 - Text */
+    --dashboard-muted: #64748b;
+    /* Slate 500 - Secondary */
+    --dashboard-border: #e2e8f0;
+    /* Slate 200 - Borders */
+
+    /* Spacing */
+    --dash-space-xs: 0.25rem;
+    --dash-space-sm: 0.5rem;
+    --dash-space-md: 1rem;
+    --dash-space-lg: 1.5rem;
+    --dash-space-xl: 2rem;
+
+    /* Sidebar */
+    --sidebar-width: 72px;
+    --sidebar-expanded: 240px;
+
+    /* Shadows */
+    --dash-shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --dash-shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+    --dash-shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* ========================================
+   Dashboard Layout
+   ======================================== */
+.dashboard {
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    min-height: 100vh;
+    background: var(--dashboard-bg);
+}
+
+.dashboard__main {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.dashboard__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--dash-space-md) var(--dash-space-xl);
+    background: var(--dashboard-surface);
+    border-bottom: 1px solid var(--dashboard-border);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.dashboard__header-title {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--dashboard-text);
+}
+
+.dashboard__header-actions {
+    display: flex;
+    align-items: center;
+    gap: var(--dash-space-md);
+}
+
+.dashboard__content {
+    flex: 1;
+    padding: var(--dash-space-xl);
+    overflow-y: auto;
+}
+
+/* ========================================
+   Sidebar
+   ======================================== */
+.sidebar {
+    background: var(--dashboard-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--dash-space-md) 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    z-index: 100;
+}
+
+.sidebar__logo {
+    width: 40px;
+    height: 40px;
+    background: var(--dashboard-accent);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    margin-bottom: var(--dash-space-xl);
+}
+
+.sidebar__nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--dash-space-sm);
+    flex: 1;
+}
+
+.sidebar__link {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: var(--dashboard-muted);
+    transition: all 0.2s ease;
+    position: relative;
+}
+
+.sidebar__link:hover {
+    background: var(--dashboard-secondary);
+    color: white;
+}
+
+.sidebar__link.active {
+    background: var(--dashboard-accent);
+    color: white;
+}
+
+.sidebar__link svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* ========================================
+   Bento Grid
+   ======================================== */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--dash-space-lg);
+    margin-bottom: var(--dash-space-xl);
+}
+
+.bento-grid--main {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--dash-space-lg);
+}
+
+@media (min-width: 1200px) {
+    .bento-grid--main {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+/* ========================================
+   KPI Card
+   ======================================== */
+.kpi-card {
+    background: var(--dashboard-surface);
+    border-radius: 16px;
+    padding: var(--dash-space-lg);
+    box-shadow: var(--dash-shadow-sm);
+    border: 1px solid var(--dashboard-border);
+    transition: all 0.2s ease;
+}
+
+.kpi-card:hover {
+    box-shadow: var(--dash-shadow-md);
+    transform: translateY(-2px);
+}
+
+.kpi-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--dash-space-md);
+}
+
+.kpi-card__icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.kpi-card__icon--primary {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--dashboard-accent);
+}
+
+.kpi-card__icon--success {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--dashboard-success);
+}
+
+.kpi-card__icon--warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--dashboard-warning);
+}
+
+.kpi-card__icon--danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--dashboard-danger);
+}
+
+.kpi-card__icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.kpi-card__trend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.kpi-card__trend--up {
+    color: var(--dashboard-success);
+}
+
+.kpi-card__trend--down {
+    color: var(--dashboard-danger);
+}
+
+.kpi-card__value {
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dashboard-text);
+    line-height: 1;
+    margin-bottom: var(--dash-space-xs);
+}
+
+.kpi-card__label {
+    font-size: 0.875rem;
+    color: var(--dashboard-muted);
+    font-weight: 500;
+}
+
+/* ========================================
+   Data Table
+   ======================================== */
+.data-table {
+    background: var(--dashboard-surface);
+    border-radius: 16px;
+    box-shadow: var(--dash-shadow-sm);
+    border: 1px solid var(--dashboard-border);
+    overflow: hidden;
+}
+
+.data-table__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--dash-space-lg);
+    border-bottom: 1px solid var(--dashboard-border);
+}
+
+.data-table__title {
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--dashboard-text);
+}
+
+.data-table__actions {
+    display: flex;
+    gap: var(--dash-space-sm);
+}
+
+.data-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    text-align: left;
+    padding: var(--dash-space-md) var(--dash-space-lg);
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--dashboard-muted);
+    background: var(--dashboard-bg);
+    border-bottom: 1px solid var(--dashboard-border);
+}
+
+.data-table td {
+    padding: var(--dash-space-md) var(--dash-space-lg);
+    font-size: 0.875rem;
+    color: var(--dashboard-text);
+    border-bottom: 1px solid var(--dashboard-border);
+}
+
+.data-table tr:last-child td {
+    border-bottom: none;
+}
+
+.data-table tr:hover td {
+    background: var(--dashboard-bg);
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-badge--success {
+    background: rgba(34, 197, 94, 0.1);
+    color: var(--dashboard-success);
+}
+
+.status-badge--warning {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--dashboard-warning);
+}
+
+.status-badge--danger {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--dashboard-danger);
+}
+
+.status-badge--info {
+    background: rgba(6, 182, 212, 0.1);
+    color: var(--dashboard-info);
+}
+
+.status-badge__dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* ========================================
+   Map Container
+   ======================================== */
+.map-container {
+    background: var(--dashboard-surface);
+    border-radius: 16px;
+    box-shadow: var(--dash-shadow-sm);
+    border: 1px solid var(--dashboard-border);
+    overflow: hidden;
+    height: 400px;
+}
+
+.map-container__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--dash-space-md) var(--dash-space-lg);
+    border-bottom: 1px solid var(--dashboard-border);
+}
+
+.map-container__title {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dashboard-text);
+}
+
+.map-container__map {
+    height: calc(100% - 56px);
+}
+
+/* ========================================
+   Responsive Adjustments
+   ======================================== */
+@media (max-width: 1024px) {
+    .bento-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        display: none;
+    }
+
+    .bento-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard__content {
+        padding: var(--dash-space-md);
+    }
+}
