@@ -1,181 +1,358 @@
 ---
-// Header.astro - Minimal Navigation
+// Header.astro - Elite Sticky Header with Transparency Transition
 ---
 
-<header class="header">
-  <div class="header__inner">
-    <a href="/" class="header__logo">
-      Natuclean
+<header class="header-elite" id="header">
+  <div class="header-elite__inner">
+    <a href="/" class="header-elite__logo">
+      <span class="header-elite__logo-text">Natuclean</span>
     </a>
     
-    <nav class="header__nav">
-      <a href="#productos" class="header__link">Colección</a>
-      <a href="#historia" class="header__link">Historia</a>
-      <a href="#ingredientes" class="header__link">Alquimia</a>
-      <a href="/blog/beneficios-aromaterapia" class="header__link">Blog</a>
-      <a href="#testimonios" class="header__link">Testimonios</a>
-      <a href="#club" class="header__link">Club</a>
+    <nav class="header-elite__nav">
+      <a href="#productos" class="header-elite__link">Colección</a>
+      <a href="#historia" class="header-elite__link">Historia</a>
+      <a href="#ingredientes" class="header-elite__link">Alquimia</a>
+      <a href="/blog/beneficios-aromaterapia" class="header-elite__link">Blog</a>
+      <a href="#contacto" class="header-elite__link">Contacto</a>
     </nav>
     
-    <div class="header__actions">
-      <button class="header__cart" aria-label="Carrito">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <div class="header-elite__actions">
+      <button class="header-elite__cart" aria-label="Carrito de compras">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
           <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
           <line x1="3" y1="6" x2="21" y2="6"/>
           <path d="M16 10a4 4 0 0 1-8 0"/>
         </svg>
-        <span class="header__cart-count">0</span>
+        <span class="header-elite__cart-count">0</span>
       </button>
     </div>
     
-    <button class="header__mobile-toggle" aria-label="Menú">
+    <button class="header-elite__toggle" aria-label="Abrir menú" id="menuToggle">
       <span></span>
       <span></span>
       <span></span>
     </button>
   </div>
+  
+  <!-- Mobile menu -->
+  <div class="header-elite__mobile-menu" id="mobileMenu">
+    <nav class="header-elite__mobile-nav">
+      <a href="#productos" class="header-elite__mobile-link">Colección</a>
+      <a href="#historia" class="header-elite__mobile-link">Historia</a>
+      <a href="#ingredientes" class="header-elite__mobile-link">Alquimia</a>
+      <a href="/blog/beneficios-aromaterapia" class="header-elite__mobile-link">Blog</a>
+      <a href="#contacto" class="header-elite__mobile-link">Contacto</a>
+    </nav>
+  </div>
 </header>
 
+<script>
+  // Scroll detection for header background change
+  const header = document.getElementById('header');
+  const scrollThreshold = 100;
+  
+  const updateHeader = () => {
+    if (window.scrollY > scrollThreshold) {
+      header?.classList.add('header-elite--scrolled');
+    } else {
+      header?.classList.remove('header-elite--scrolled');
+    }
+  };
+  
+  window.addEventListener('scroll', updateHeader, { passive: true });
+  updateHeader();
+  
+  // Mobile menu toggle
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  menuToggle?.addEventListener('click', () => {
+    header?.classList.toggle('header-elite--menu-open');
+  });
+  
+  // Close mobile menu when clicking a link
+  const mobileLinks = document.querySelectorAll('.header-elite__mobile-link');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      header?.classList.remove('header-elite--menu-open');
+    });
+  });
+</script>
+
 <style>
-  .header {
+  .header-elite {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 100;
-    background: rgba(253, 252, 249, 0.8);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 1000;
+    /* Initially transparent */
+    background: transparent;
     transition: all var(--transition-base);
   }
-
-  .header__inner {
+  
+  /* Scrolled state */
+  .header-elite--scrolled {
+    background: rgba(250, 248, 245, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+  }
+  
+  .header-elite__inner {
     max-width: var(--container-max);
     margin: 0 auto;
-    padding: 1rem var(--container-padding);
+    padding: 1.25rem var(--container-padding);
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
-  .header__logo {
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--color-text);
+  
+  /* Logo */
+  .header-elite__logo {
     text-decoration: none;
+    z-index: 10;
   }
-
-  .header__logo--accent {
-    color: var(--color-primary);
-    font-style: italic;
+  
+  .header-elite__logo-text {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    /* White initially, dark when scrolled */
+    color: var(--color-white);
+    transition: color var(--transition-base);
   }
-
-  .header__nav {
+  
+  .header-elite--scrolled .header-elite__logo-text {
+    color: var(--color-text);
+  }
+  
+  /* Navigation */
+  .header-elite__nav {
     display: flex;
-    gap: var(--space-md);
+    gap: var(--space-lg);
   }
-
-  .header__link {
+  
+  .header-elite__link {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--color-text);
-    text-decoration: none;
+    font-weight: 400;
     letter-spacing: 0.02em;
-    position: relative;
+    text-decoration: none;
+    /* White initially, dark when scrolled */
+    color: rgba(255, 255, 255, 0.9);
     transition: color var(--transition-fast);
+    position: relative;
   }
-
-  .header__link::after {
+  
+  .header-elite--scrolled .header-elite__link {
+    color: var(--color-text-light);
+  }
+  
+  .header-elite__link::after {
     content: '';
     position: absolute;
-    bottom: -4px;
+    bottom: -6px;
     left: 0;
     width: 0;
     height: 1px;
-    background: var(--color-primary);
+    background: var(--color-accent);
     transition: width var(--transition-base);
   }
-
-  .header__link:hover {
-    color: var(--color-primary);
+  
+  .header-elite__link:hover {
+    color: var(--color-white);
   }
-
-  .header__link:hover::after {
+  
+  .header-elite--scrolled .header-elite__link:hover {
+    color: var(--color-text);
+  }
+  
+  .header-elite__link:hover::after {
     width: 100%;
   }
-
-  .header__actions {
+  
+  /* Actions */
+  .header-elite__actions {
     display: flex;
     align-items: center;
     gap: var(--space-sm);
   }
-
-  .header__cart {
+  
+  .header-elite__cart {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: none;
+    width: 44px;
+    height: 44px;
+    background: transparent;
     border: none;
     cursor: pointer;
-    color: var(--color-text);
+    color: var(--color-white);
     transition: color var(--transition-fast);
   }
-
-  .header__cart:hover {
-    color: var(--color-primary);
+  
+  .header-elite--scrolled .header-elite__cart {
+    color: var(--color-text);
   }
-
-  .header__cart-count {
+  
+  .header-elite__cart:hover {
+    color: var(--color-accent);
+  }
+  
+  .header-elite__cart-count {
     position: absolute;
-    top: 4px;
-    right: 4px;
-    width: 16px;
-    height: 16px;
+    top: 6px;
+    right: 6px;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    font-family: var(--font-body);
     font-size: 0.65rem;
     font-weight: 600;
-    background: var(--color-primary);
-    color: var(--color-white);
-    border-radius: 50%;
+    background: var(--color-accent);
+    color: var(--color-black);
+    border-radius: var(--radius-full);
     display: flex;
     align-items: center;
     justify-content: center;
   }
-
-  .header__mobile-toggle {
+  
+  /* Mobile toggle */
+  .header-elite__toggle {
     display: none;
     flex-direction: column;
+    justify-content: center;
     gap: 5px;
-    padding: 8px;
-    background: none;
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 10;
   }
-
-  .header__mobile-toggle span {
+  
+  .header-elite__toggle span {
     display: block;
-    width: 20px;
+    width: 24px;
     height: 2px;
-    background: var(--color-text);
+    background: var(--color-white);
     transition: all var(--transition-fast);
+    transform-origin: center;
   }
-
-  @media (max-width: 768px) {
-    .header__nav {
+  
+  .header-elite--scrolled .header-elite__toggle span {
+    background: var(--color-text);
+  }
+  
+  /* Menu open state for toggle */
+  .header-elite--menu-open .header-elite__toggle span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .header-elite--menu-open .header-elite__toggle span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .header-elite--menu-open .header-elite__toggle span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  /* Mobile menu panel */
+  .header-elite__mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 24, 22, 0.98);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all var(--transition-base);
+    z-index: 5;
+  }
+  
+  .header-elite--menu-open .header-elite__mobile-menu {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .header-elite__mobile-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-md);
+  }
+  
+  .header-elite__mobile-link {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    font-weight: 400;
+    color: var(--color-white);
+    text-decoration: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all var(--transition-base);
+  }
+  
+  .header-elite--menu-open .header-elite__mobile-link {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .header-elite--menu-open .header-elite__mobile-link:nth-child(1) { transition-delay: 0.1s; }
+  .header-elite--menu-open .header-elite__mobile-link:nth-child(2) { transition-delay: 0.15s; }
+  .header-elite--menu-open .header-elite__mobile-link:nth-child(3) { transition-delay: 0.2s; }
+  .header-elite--menu-open .header-elite__mobile-link:nth-child(4) { transition-delay: 0.25s; }
+  .header-elite--menu-open .header-elite__mobile-link:nth-child(5) { transition-delay: 0.3s; }
+  
+  .header-elite__mobile-link:hover {
+    color: var(--color-accent);
+  }
+  
+  /* When menu is open, ensure text stays visible */
+  .header-elite--menu-open .header-elite__logo-text,
+  .header-elite--menu-open .header-elite__toggle span {
+    color: var(--color-white);
+    background: var(--color-white);
+  }
+  
+  .header-elite--menu-open .header-elite__logo-text {
+    background: transparent;
+  }
+  
+  /* Responsive */
+  @media (max-width: 968px) {
+    .header-elite__nav {
       display: none;
     }
-
-    .header__cart {
-      margin-left: auto;
-    }
-
-    .header__mobile-toggle {
+    
+    .header-elite__toggle {
       display: flex;
+    }
+    
+    .header-elite__cart {
+      margin-right: var(--space-xs);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .header-elite__inner {
+      padding: 1rem var(--space-sm);
+    }
+    
+    .header-elite__logo-text {
+      font-size: 1.4rem;
+    }
+    
+    .header-elite__mobile-link {
+      font-size: 1.6rem;
     }
   }
 </style>
