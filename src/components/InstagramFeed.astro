@@ -1,5 +1,5 @@
 ---
-// InstagramFeed.astro - Simple Instagram Grid
+// InstagramFeed.astro - Elite Instagram Grid
 ---
 
 <section class="instagram" id="instagram">
@@ -8,7 +8,7 @@
       <span class="instagram__label">Síguenos</span>
       <h2 class="instagram__title">@natuclean</h2>
       <p class="instagram__description">
-        Descubrebehind the scenes y momentos especiales
+        Descubre behind the scenes y momentos especiales
       </p>
     </div>
     
@@ -17,7 +17,9 @@
       <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__post">
         <img src="/images/hero-candle.jpg" alt="Proceso artesanal" loading="lazy" />
         <div class="instagram__overlay">
-          <span class="instagram__icon">❤️</span>
+          <svg class="instagram__icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
         </div>
       </a>
       
@@ -25,7 +27,9 @@
       <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__post">
         <img src="/images/soap-botanic.jpg" alt="Producto terminado" loading="lazy" />
         <div class="instagram__overlay">
-          <span class="instagram__icon">❤️</span>
+          <svg class="instagram__icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
         </div>
       </a>
       
@@ -33,7 +37,9 @@
       <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__post">
         <img src="/images/collection-set.jpg" alt="Colección completa" loading="lazy" />
         <div class="instagram__overlay">
-          <span class="instagram__icon">❤️</span>
+          <svg class="instagram__icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
         </div>
       </a>
       
@@ -41,13 +47,15 @@
       <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__post">
         <img src="/images/candle-detail.jpg" alt="Detalle de producto" loading="lazy" />
         <div class="instagram__overlay">
-          <span class="instagram__icon">❤️</span>
+          <svg class="instagram__icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+          </svg>
         </div>
       </a>
     </div>
     
     <div class="instagram__cta">
-      <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="btn btn-secondary">
+      <a href="https://instagram.com/natuclean" target="_blank" rel="noopener" class="instagram__btn">
         Ver más en Instagram
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -59,7 +67,7 @@
 
 <style>
   .instagram {
-    padding: var(--space-xl) 0;
+    padding: var(--space-2xl) 0;
     background: var(--color-bg-alt);
   }
   
@@ -73,13 +81,14 @@
     display: inline-block;
     font-family: var(--font-body);
     font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
+    font-weight: 500;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--color-primary);
+    color: var(--color-accent);
     margin-bottom: var(--space-sm);
-    padding: 0.5rem 1rem;
-    background: rgba(25, 230, 60, 0.1);
+    padding: 0.5rem 1.25rem;
+    background: rgba(196, 167, 125, 0.1);
+    border: 1px solid rgba(196, 167, 125, 0.2);
     border-radius: var(--radius-full);
   }
   
@@ -103,7 +112,7 @@
     position: relative;
     aspect-ratio: 1;
     overflow: hidden;
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     cursor: pointer;
   }
   
@@ -121,7 +130,7 @@
   .instagram__overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(26, 24, 22, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,11 +143,41 @@
   }
   
   .instagram__icon {
-    font-size: 2rem;
+    color: var(--color-white);
   }
   
   .instagram__cta {
     text-align: center;
+  }
+  
+  .instagram__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--color-text);
+    text-decoration: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-base);
+  }
+  
+  .instagram__btn:hover {
+    background: var(--color-text);
+    color: var(--color-white);
+    border-color: var(--color-text);
+  }
+  
+  .instagram__btn svg {
+    transition: transform var(--transition-fast);
+  }
+  
+  .instagram__btn:hover svg {
+    transform: translateX(4px);
   }
   
   @media (max-width: 768px) {
