@@ -17,5 +17,8 @@
     "hono": "^4.11.8",
     "leaflet": "^1.9.4",
     "solid-js": "^1.9.11"
+  },
+  "devDependencies": {
+    "@types/node": "^25.2.2"
   }
 }
